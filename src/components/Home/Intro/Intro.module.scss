@@ -1,0 +1,209 @@
+.wrapper {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition-duration: 0.4s;
+    @media(max-width:1524px) {
+            background-size: cover;
+    }
+    @media(max-width:970px) {
+        background-position: -370px center ;
+    }
+    @media(max-width:940px) {
+        background-position: -400px center ;
+    }
+    @media(max-width:850px) {
+        background-position: -430px center ;
+    }
+    @media(max-width:768px) {
+        background-position: -370px center ;
+    }
+    @media(max-width: 660px) {
+        background-position: -460px center ;
+    }
+    @media(max-width: 600px) {
+        background-position: -500px center ;
+    }
+    @media(max-width: 500px) {
+        background-position: -400px center ;
+    }
+   
+}
+.content {
+    margin: 0 auto;
+    max-width: 1246px;
+    padding: 110px 15px 109px 15px;
+    display: flex;
+    justify-content: space-between;
+    @media(max-width:768px) {
+        padding: 48px 15px 109px 15px;
+    }
+    
+    .title {
+        color:  #BB8C5F;
+        font-family: Forum;
+        font-size: 75px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 100%; 
+        max-width: 594px;
+        margin-bottom: 30px;
+        @media(max-width:884px) {
+                font-size: 60px;
+        }
+        
+    }
+    .text {
+        color: #FAF6F2;
+        font-family: Jost;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%; 
+        max-width: 431px;
+        margin-bottom: 60px;
+    }
+}
+
+.catalog__text {
+    color:  #FAF6F2;
+    text-align: center;
+    font-family: Jost;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; 
+    padding: 18px 63px 22px 64px;
+    background-image: url("../../../assets/img/intro-btn.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 275px;
+    height: 70px;
+    transition: 0.5s ease;
+    &:hover {
+        opacity: 0.7;
+    }
+}
+.carousel {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px 0;
+    &:first-child {
+        max-width: 58px;
+    }
+    span {
+        width: 15px;
+        height: 15px;
+        border: 1px solid #524336;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    img {
+        cursor: pointer;
+    }
+ 
+}
+.right {
+    text-align: center;
+    margin: auto 0;
+}
+
+.btn__active {
+    display: inline-flex;
+    width: 5px;
+    height: 5px;
+    background-color:  #BB8C5F;
+}
+.phone__carousel, .phone__bg {
+    display: none;
+    
+}
+@media(max-width:970px) {
+    .right {
+        display: none;
+    }
+    .phone__carousel {
+        display: flex;
+        justify-content: center;
+        gap: 0 28px;
+        padding-bottom: 72px;
+        span {
+            width: 15px;
+            height: 15px;
+            border: 1px solid #524336;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+@media(max-width: 500px) {
+    .phone__carousel {
+        display: none;
+    }
+    
+    .wrapper {
+        background-image: none !important;
+        .content {
+            .title {
+                font-size: 35px;
+            }
+    
+        }
+    }
+}
+    
+    .phone__bg {
+        margin: 0 auto;
+        max-width: 470px;
+        height: 322px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: -300px center;
+        @media(max-width: 460px) {
+            background-position: -310px center;
+    }
+    @media(max-width: 446px) {
+        background-position: -320px center;   
+}
+    @media(max-width: 446px) {
+        max-width: 370px;
+        background-position: -360px center;  
+}
+    @media(max-width: 348px) {
+        max-width: 320px;
+        background-position: -380px center;  
+    }
+}
+@media(max-width: 500px) {
+    .content {
+        text-align: center;
+        padding: 50px 15px 150px 15px;
+        .title {
+            font-size: 55px;
+        }
+        .text {
+            font-size: 20px;
+        }
+        .content {
+            padding: 0;
+        }
+
+    }
+    .link {
+        text-align: center;
+        margin: 0 auto;
+        display: inline-block;
+    }
+    .phone__bg {
+        display: block;
+    }
+}
+
+
+

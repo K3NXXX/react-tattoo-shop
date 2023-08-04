@@ -1,0 +1,32 @@
+.wrapper {
+    max-width: 1246px;
+    padding: 120px 15px 0 15px;
+    margin: 0 auto;
+}
+.category__list {
+    gap: 0 60px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 45px;
+    li a {
+        color: #3E424B;
+        font-family: 'Roboto', sans-serif;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 115%; 
+        transition: 0.3s ease;
+        position: relative;
+        &:hover {
+            color:  #BB8C5F;
+        }
+       
+    }
+    
+}
+.goods {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}

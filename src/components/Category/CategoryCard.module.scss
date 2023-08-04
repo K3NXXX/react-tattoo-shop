@@ -1,0 +1,101 @@
+.categoryCard {
+    height: 440px;
+    padding: 15px 0 30px 0;
+    background: #F5F5F5;
+    display: inline-block;
+    position: relative;
+    transition: all 0.3s ease;  
+    &:hover {
+        transform: scale(1.1);
+        padding: 15px 0 70px 0;
+        z-index: 2;
+    }
+}
+.fav {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+}
+.new {
+    background-image: url("../../assets/img/categoryGoods/new.svg");
+    width: 85px;
+    height: 29px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: #BB8C5F;
+    font-family: Jost;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    padding: 4px 18px 6px 10px;
+    position: absolute;
+    top: 30px;
+    left: 40px;
+}
+.bg {
+    // background-image: url("../../assets/img/categoryGoods/1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 228px;
+    width: 289px;
+    margin-bottom: 22px;
+    
+}
+.card__info {
+    padding: 0 30px;
+    .info__name {
+        color:#3E424B;
+        font-family: Jost;
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%;
+        max-width: 229px;
+        margin-bottom: 10px;
+    }
+    .info__price {
+        color:  #BB8C5F;
+        font-family: Jost;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 130%; 
+        margin-bottom: 20px;
+
+
+
+    }
+    .span__add {
+        display: block;
+        text-align: center;
+        color:  #BB8C5F;
+        text-align: center;
+        font-family: Jost;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%; 
+        cursor: pointer;
+        background-image: url("../../assets/img/categoryGoods/add-icon.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        max-width: 259px;
+        max-height: 50px;
+        padding: 8px 42px 12px;
+        opacity: 1;
+        transition: opacity 0.5s;
+        position: absolute;
+        transition-duration: 0.3s;
+        &:hover {
+            opacity: 0.8;
+        }
+        
+
+      
+    }
+}
