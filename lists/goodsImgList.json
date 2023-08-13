@@ -1,0 +1,93 @@
+[
+    {
+     "type": "new",
+     "id": 1,
+     "image": "/categoryGoods/1.png",
+     "name": "Foxxx Kitsune Mini Black Vintage RCA",
+     "price": "6 000"
+    },
+    {
+     "type": "new",
+     "id": 2,
+     "image": "/categoryGoods/2.png",
+     "name": "Foxxx Viper Fox Golden Vintage Lot #1 RCA",
+     "price": "7 730"
+    },
+    {
+     "type": "new",
+     "id": 3,
+     "image": "/categoryGoods/3.png",
+     "name": "Нитровиниловые перчатки Wally Plastic S",
+     "price": "20"
+    },
+    {
+     "type": "new",
+     "id": 4,
+     "image": "/categoryGoods/4.png",
+     "name": "Forever Cartridge Grip Ergo 30 mm Огненно-Рыжий",
+     "price": "2 037"
+    },
+    {
+     "type": "new",
+     "id": 5,
+     "image": "/categoryGoods/5.png",
+     "name": "Verge Direct 2.1 Pink gip EGO 4 mm liners",
+     "price": "2 037"
+    },
+    {
+     "type": "new",
+     "id": 6,
+     "image": "/categoryGoods/6.png",
+     "name": "Deuce Machines Direct Drive #7 RCA Samurai",
+     "price": "6 000"
+    },
+    {
+     "type": "new",
+     "id": 7,
+     "image": "/categoryGoods/7.png",
+     "name": "Cyborg Machines Alter Rotary Axis Cross Sexy Nymph",
+     "price": "5 000"
+    },
+    {
+     "type": "new",
+     "id": 8,
+     "image": "/categoryGoods/8.png",
+     "name": "Verge Direct 2.1 Gunmetal",
+     "price": "7 900"
+    },
+    {
+        "type": "hits",
+        "id": 9,
+        "image": "/categoryGoods/9.png",
+        "name": "Skinductor Vertigo Long Stroke",
+        "price": "8 550 "
+    },
+    {
+        "type": "hits",
+        "id": 10,
+        "image": "/categoryGoods/10.png",
+        "name": "Verge Direct 2.1 Black",
+        "price": "6000"
+    },
+    {
+        "type": "hits",
+        "id": 11,
+        "image": "/categoryGoods/11.png",
+        "name": "Foxxx Kitsune Mini Vintage Aging With Gold RCA",
+        "price": "35 650"
+    },
+    {
+        "type": "popular",
+        "id": 12,
+        "image": "/categoryGoods/12.png",
+        "name": "CNC X-WE Wireless Tattoo Pen",
+        "price": "12 000"
+    },
+    {
+        "type": "popular",
+        "id": 13,
+        "image": "/categoryGoods/13.png",
+        "name": "MT Vader Pen MT RCA Cord PRO 2000.135",
+        "price": "9 940"
+    }
+]
