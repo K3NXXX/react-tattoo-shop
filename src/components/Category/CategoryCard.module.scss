@@ -1,6 +1,6 @@
 .categoryCard {
     height: 440px;
-    padding: 15px 0 30px 0;
+    padding: px 0 30px 0;
     background: #F5F5F5;
     display: inline-block;
     position: relative;
@@ -18,7 +18,7 @@
     cursor: pointer;
 }
 .new {
-    background-image: url("../../assets/img/categoryGoods/new.svg");
+    background-image: url("../../../public/categoryGoods/new.svg");
     width: 85px;
     height: 29px;
     background-repeat: no-repeat;
@@ -36,14 +36,12 @@
     left: 40px;
 }
 .bg {
-    // background-image: url("../../assets/img/categoryGoods/1.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     height: 228px;
     width: 289px;
     margin-bottom: 22px;
-    
 }
 .card__info {
     padding: 0 30px;
@@ -56,6 +54,7 @@
         line-height: 140%;
         max-width: 229px;
         margin-bottom: 10px;
+        min-height: 52px;
     }
     .info__price {
         color:  #BB8C5F;
@@ -80,7 +79,7 @@
         font-weight: 400;
         line-height: 150%; 
         cursor: pointer;
-        background-image: url("../../assets/img/categoryGoods/add-icon.svg");
+        background-image: url("../../../public/categoryGoods/add-icon.svg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -94,8 +93,23 @@
         &:hover {
             opacity: 0.8;
         }
+    }
+}
+.categoryCard__phone {
+    display: none;
+}
+@media (max-width:1248px) {
+    .categoryCard {
+        display: none;
+    }
+    .categoryCard__phone {
+        display: inline-block;
+        height: 440px;
+        padding: px 0 30px 0;
+        background: #F5F5F5;
+        position: relative;
+        transition: all 0.3s ease;  
         
-
-      
+       
     }
 }

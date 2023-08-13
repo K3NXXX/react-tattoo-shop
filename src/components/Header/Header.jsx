@@ -10,9 +10,13 @@ import viber2 from "../../assets/img/viber2-icon.svg"
 import arrow from "../../assets/img/arrow-icon.svg"
 import { useState,useRef, useEffect } from "react"
 import { useClickOutside } from "../../hooks/useClickOutside"
+import { useSelector } from "react-redux"
 const Header = () => {
     let [openMenu, setOpenMenu] = useState(false)
     const [expandCatalog, setExpandCatalog] = useState(false)
+    const favouriteCount = useSelector(state => state.categorySlice.favouriteCount)
+    const price = useSelector(state => state.categorySlice.price)
+    const binCount = useSelector(state => state.categorySlice.binCount)
     const catalog = ["Новинки", "Набори для тату", "Тату машинки", "Тату фарби", "Тату голки", "Тату тримачі", "Тату наконечники", "Блоки живлення", "Педалі та провода", "Аксесуари", "Принтери і планшети", "Захист, ємності, розхідн..."]
     const headerCategoryList = ["Промокоди", "Знижки", "Допомога", "Про нас", "Контакти" ]
     const headerPhoneCategoryList = ["Каталог", "Контакти", "Промокоди", "Знижки", "Допомога", "Про нас", "Вибране", "Особистий кабінет" ]
@@ -78,14 +82,20 @@ const Header = () => {
                     </div>
                     <div className={style.right}>
                         <a className={style.shop__bin} href="">
-                            <span>37 280 ₴</span>
+                            <span>{price} ₴</span>
                             <img src={shop_bin} alt="shop bin" />
-                            <span className={style.bin__number}>17</span>
+                            {binCount === 0 ? "" : (
+                                <span className={style.bin__number}>{binCount}</span>
+                            )}
                         </a>
-                        <a href="">
-                            <img src={favourite} alt="favourite" />
+                        <a className={style.header__favLink} href="">
+                            <img src={favourite}   alt="favourite" />
+                            {favouriteCount === 0 ? "" : (
+                                <span>{favouriteCount}</span>
+                            )}
+
                         </a>
-                        <a href="">
+                        <a  href="">
                             <img src={account} alt="account" />
                         </a>
                     </div>

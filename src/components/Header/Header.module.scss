@@ -130,10 +130,25 @@
         right: -14px;
         top: -11px;
     }
-    a {
-       img {
-        fill: red;
-       }
+}
+.header__favLink {
+    display: flex;
+    min-height: 28px;
+    align-items: center;
+    position: relative;
+    span {
+        background-color: #BB8C5F;
+        padding: 0 5px;
+        position: absolute;
+        right: -18px;
+        top: -11px;
+        color:  #FAF6F2;
+        font-family: Jost;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%; 
+        margin-right: 5px;
     }
 }
 .bottom {
