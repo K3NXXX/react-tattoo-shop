@@ -4,6 +4,7 @@ import downBtn from "../../../assets/img/intro-slider-btn2.svg"
 import bg1 from "../../../assets/img/intro-bg1.png"
 import bg2 from "../../../assets/img/intro-bg2.png"
 import bg3 from "../../../assets/img/intro-bg3.png"
+import { Link } from "react-scroll";
 import { useState } from "react"
 const Intro = () => {
     const spanList = ["", "", ""]
@@ -29,9 +30,12 @@ const Intro = () => {
                 <div className={style.left}>
                     <h1 className={style.title}>Найкращі товари <br/>в світі тату</h1>
                     <p className={style.text}>Обладнання та матеріали для найяскравіших та якісних робіт</p>
-                    <a href="" className={style.link}>
+                    <Link to="toCatalog" 
+                    smooth={true}
+                    duration={1000}
+                    className={style.link}>
                         <span className={style.catalog__text}>Дивитися каталог</span>
-                    </a>
+                    </Link>
                 </div>
                 <div className={style.right}>
                     <div className={style.carousel}>

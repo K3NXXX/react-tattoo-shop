@@ -1,7 +1,14 @@
 .wrapper {
     max-width: 1246px;
     margin: 0 auto;
-    padding: 240px 15px 100px 15px;
+    padding: 240px 15px 30px 15px;
+    @media (max-width:1500px) {
+    padding: 40px 15px 30px 15px;
+    }
+    @media (max-width:500px) {
+        padding: 15px 15px 30px 15px;
+    }
+    
 }
 .title {
     color:  #3E424B;
@@ -12,4 +19,155 @@
     line-height: 100%; 
     text-align: center;
     margin-bottom: 50px;
+    @media (max-width:768px) {
+        text-align: start;
+        margin-bottom: 40px;
+    }
+    @media (max-width:500px) {
+        font-size: 25px;
+        margin-bottom: 30px;
+    }
 }
+.feedback__wrapper {
+    max-width: 598px;
+    min-height: 307px;
+    background-color: #050402;
+    position: relative;
+    padding: 50px 50px 0 50px;
+    @media (max-width:610px) {
+        width: 279px;
+        height: 433px;
+        padding: 50px 20px 0px 20px;
+    }
+    &::after {
+        position: absolute;
+        content: "";
+        background-image: url("../../assets/img/Feedback/feedbackArrow.svg");
+        background-repeat: no-repeat;
+        width: 598px;
+        height: 20px;
+        top: -5px;
+        left: 0;
+        z-index: 1;
+        @media (max-width:610px) {
+            background-image: url("../../assets/img/Feedback/feedbackArrowPhone.svg");
+        }
+    }
+    &::before {
+        position: absolute;
+        content: "";
+        background-image: url("../../assets/img/Feedback/feedbackArrow.svg");
+        background-repeat: no-repeat;
+        width: 598px;
+        height: 20px;
+        bottom: -14px;
+        left: 0;
+        z-index: 1;
+        @media (max-width:610px) {
+            background-image: url("../../assets/img/Feedback/feedbackArrowPhone.svg");
+        }
+    }
+    >img {
+        position: absolute;
+        top: -50px;
+        left: 50px;
+        z-index: 3;
+    }
+    .text {
+        color:#D0D0D0;
+        font-family: Jost;
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%;
+        margin-bottom: 33px; 
+    }
+    .instagram {
+        display: flex;
+        gap: 0 15px;
+        align-items: center;
+        p {
+            color:  #BB8C5F;
+            font-family: Forum;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 130%; 
+        }
+
+    }
+}
+.feedback__list {
+    max-width: 1376px; // задаю ширину яку має слайдер з стрілками
+    margin: 0 auto;
+    position: relative; // пишу це
+    @media (max-width:1376px) {
+        max-width: 800px;
+    }
+    :global {
+        .swiper {
+            min-height: 433px;
+            position: static; // пишу це
+            max-width: 1220px; // самому слайдеру задаю меншу ширину 
+            @media (max-width:1376px) {
+                max-width: 600px;
+            }
+            @media (max-width:610px) {
+                min-height: 543px;
+                max-width: 283px;
+            }
+        }
+        .swiper-wrapper {
+            top: 50px;
+        }
+        .swiper-pagination {
+            display: flex;
+            gap: 0 15px;
+            justify-content: center; 
+        }
+        .swiper-pagination-bullet {
+            border: 1px solid #524336;
+            width: 15px !important;
+            height: 15px !important;
+            border-radius: 0 !important;
+            background: transparent !important;
+            opacity: 1 !important;
+            position: relative !important;
+        }
+        .swiper-pagination-bullet-active {
+            background-color: #BB8C5F !important;
+        }
+        .swiper-button-prev {
+            background-image: url("../../assets//img//Brands/prevBtn.png") !important;
+            width: 50px !important;
+            height: 50px !important;
+            top: 200px !important;
+            &::after {
+                display: none !important; 
+            }
+            @media (max-width:768px) {
+                display: none;
+            }
+        }
+        .swiper-button-next {
+            background-image: url("../../assets//img//Brands/prevBtn.png") !important;
+            width: 50px !important;
+            height: 50px !important;
+            transform: rotate(180deg);
+            top: 200px !important;
+            &::after {
+                display: none !important; 
+            }
+            @media (max-width:768px) {
+                display: none;
+            }
+        }
+        .swiper-slide {
+            @media (max-width:1376px) {
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+}
+

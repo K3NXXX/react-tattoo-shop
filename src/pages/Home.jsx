@@ -8,13 +8,16 @@ import Catalog from "../components/Catalog/Catalog";
 import Brands from "../components/Brands/Brands";
 import About from "../components/About/About";
 import Feedback from "../components/Feedback/Feedback";
-
-
+import Subscribe from "../components/Subscribe/Subscribe";
+import "../scss/global.scss"
 const Home = () => {
+    
     // Отримую вибрану категорію з Category---------------
     const activeCategory = useSelector((state) => state.categorySlice.activeCategory)
     const dispatch = useDispatch()
-    
+    useEffect(() => {
+        window.scrollTo(0,0)
+    }, [])
     // Запит даних з mockapi---------------
     useEffect(() => {
         setIsLoading(true)
@@ -25,8 +28,10 @@ const Home = () => {
              searchParams = "hits"
         }else if (activeCategory === 2) {
             searchParams = "popular"
+       }else {
+        searchParams = ""
        }
-        axios.get(`https://64cc9b3a2eafdcdc851a0362.mockapi.io/goods?search=${searchParams}`)
+        axios.get(`https://64cc9b3a2eafdcdc851a0362.mockapi.io/goods${searchParams ? `?search=${searchParams}` : ""}`)
             .then(res => {
                 dispatch(setGoods(res.data))
                 dispatch(setIsLoading(false))
@@ -37,7 +42,6 @@ const Home = () => {
                 }
             })
             .catch(error => console.error("Error fetching data:", error));
-            
     }, [activeCategory, dispatch]);
 
     return (  
@@ -48,7 +52,7 @@ const Home = () => {
             <Brands/>
             <About/>
             <Feedback/>
-           
+            <Subscribe/>
         </main>
     );
 }

@@ -6,16 +6,19 @@ import catalog12 from "../../assets/img/Catalog/catalog12.png"
 import catalog13 from "../../assets/img/Catalog/catalog13.png"
 import catalog14 from "../../assets/img/Catalog/catalog14.png"
 import catalog15 from "../../assets/img/Catalog/catalog15.png"
+import { Link, NavLink } from "react-router-dom";
 const Catalog = () => {
     return (
-        <section className={style.catalog}>
+        <section id="toCatalog" className={style.catalog}>
             <div className={style.catalog__top}>
                 <h4 className={style.title}>Каталог</h4>
                 <div className={style.catalog__list}>
-                    {catalogList.map((catalogItem, index) => (<a key={index} className={style.link} href="">
+                    {catalogList.map((catalogItem, index) => (<Link key={index} className={style.link} to={`/catalog/${index }`}>
+                         {/* catalogItem.url */}
                             <img src={catalogItem.image}/>
                             <p className={style.image__text}>{catalogItem.description}</p>
-                        </a>))}
+                        </Link>))
+                    }
                 </div>
                 <div className={style.catalog__listTablet}>
                     <div className={style.catalog__listTablet_wrapper}>

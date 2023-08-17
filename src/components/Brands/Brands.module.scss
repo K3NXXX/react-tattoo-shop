@@ -14,7 +14,7 @@
     font-family: Forum;
     font-size: 60px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 400; 
     line-height: 100%; 
     margin-bottom: 30px;
 }
@@ -36,7 +36,7 @@
 .images {
   max-width: 211px;
 }
-.wacthAll {
+.watchAll {
   display: block;
   color:  #3E424B;
   font-family: Jost;
@@ -44,9 +44,13 @@
   font-style: normal;
   font-weight: 400;
   line-height: 140%; 
-  text-align: end;
   cursor: pointer;
   margin-right: 5px;
+  max-width: 150px;
+  text-align: start;
+  position: relative;
+  left: 5px;
+ 
 }
 .brandsTablet {
   display: none;

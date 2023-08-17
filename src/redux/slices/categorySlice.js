@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
     goods: [],
+    catalogGoods: [],
     activeCategory: 0,
     newGood: true,
     favouriteCount: 0,
@@ -10,7 +11,7 @@ const initialState = {
     clickedIdFavorite : [],
     goodsState: {},
     selectSvg: false,
-    price: 0
+    price: 0,
 }
 const categorySlice = createSlice({
     name: "category",
@@ -31,6 +32,7 @@ const categorySlice = createSlice({
         setIsLoading(state, action) {
             state.isLoading = action.payload
         },
+        
         setClickedIdFavorite(state, action) {
             state.clickedIdFavorite = action.payload
         },
@@ -39,6 +41,9 @@ const categorySlice = createSlice({
         },
         setGoods(state, action) {
             state.goods = action.payload ;
+        },
+        setCatalogGoods(state, action) {
+            state.catalogGoods = action.payload ;
         },
         setPrice(state, action) {
             state.price = action.payload
@@ -50,5 +55,5 @@ const categorySlice = createSlice({
 })
 export const {setGoods, setActiveCategory, setNewGood, setFavouriteCount, 
               setBinCount, setChooseFavourite, setIsLoading, setClickedIdFavorite,
-              setGoodsState, setPrice} = categorySlice.actions
+              setGoodsState, setPrice, setCatalogGoods} = categorySlice.actions
 export default categorySlice.reducer

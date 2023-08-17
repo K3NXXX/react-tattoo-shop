@@ -1,0 +1,200 @@
+.root {
+    background-color: #050402;
+    padding: 130px 0;
+    position: relative;
+    @media (max-width:718px) {
+        padding: 80px 0;
+    }
+}
+.wrapper {
+    max-width: 1246px;
+    margin: 0 auto;
+    padding: 0 80px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    @media (max-width:1160px) {
+        flex-direction: column;
+        align-items: center;
+    }
+    @media (max-width:768px) {
+        align-items: start;
+    }
+    @media (max-width:718px) {
+        align-items: center;
+    }
+    @media (max-width:520px) {
+        padding: 0 20px;
+    }
+   
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    max-width: 220px;
+    position: relative;
+    margin-bottom: 50px;
+    svg {
+        position: relative;
+        left: 11px;
+        
+    }
+    .logo__name {
+        color: #BB8C5F;
+        font-family: Forum;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%; 
+        text-transform: uppercase;
+        position: relative;
+        top: 5px;
+    }
+    span {
+        color:  #BB8C5F;
+        font-family: Jost;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 150%; 
+        letter-spacing: 3.5px;
+        text-transform: uppercase;
+        text-align: center;
+    }
+}
+.left {
+    display: flex;
+    gap: 0 80px;
+    @media (max-width:1160px) {
+        margin-bottom: 145px;
+        justify-content: center;
+    }
+    @media (max-width:718px) {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    @media (max-width:718px) {
+        margin-bottom: 40px;
+    }
+}
+.copyright {
+    color: #FAF6F2;
+    font-family: Jost;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    padding-left: 15px;
+    @media (max-width:718px) {
+        padding-left: 0;
+        margin-bottom: 30px;
+    }
+}
+.second__column {
+    @media (max-width:718px) {
+        margin-bottom: 25px;
+        flex-direction: column;
+        gap: 30px 0;
+    }
+}
+.second__column, .third__column {
+    padding-top: 10px;
+    ul {
+        li {
+            &:not(:last-child) {
+                margin-bottom: 35px;
+            }
+            a {
+                color:  #E9ECF1;
+                font-family: Jost;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 133.5%; 
+                transition: ease 0.3s;
+                &:hover {
+                    color: #BB8C5F;
+                }
+                
+            }
+        }
+    }
+}
+.contacts__phone {
+    display: flex;
+    align-items: center;
+    margin-right: 46px;
+    margin-bottom: 17px;
+    @media (max-width:718px) {
+        margin-right: 0;
+        padding-left: 20px;
+    }
+    @media (max-width:394px) {
+        flex-direction: column;
+        gap: 30px 0;
+    }
+    img {
+        width: 28px;
+        margin-right: 10px;
+    }
+    .phone__number {
+        color: #FAF6F2;
+        font-family: Jost;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%; 
+        margin-right: 25px;
+    }
+}
+.right {
+    padding-top: 10px;
+    @media (max-width:1160px) {
+        padding-left: 90px;
+    }
+    @media (max-width:768px) {
+        padding-left: 0px;
+    }
+   
+    .contacts {
+        @media (max-width:718px) {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+        
+        }
+        p {
+            color: #636B78;
+            font-family: Jost;
+            font-size: 17px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%; 
+            margin-bottom: 32px;
+        }
+        .email {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            min-height: 28px;
+            @media (max-width:718px) {
+                justify-content: center;
+            }
+            img {
+                width: 28px;
+                margin-right: 10px;
+            }
+            a {
+                color: #FAF6F2;
+                font-family: Jost;
+                font-size: 15px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 150%; 
+            }
+        }
+    }
+}

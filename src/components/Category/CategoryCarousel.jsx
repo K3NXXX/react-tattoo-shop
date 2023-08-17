@@ -29,18 +29,20 @@ const CategoryCarousel = () => {
         }
     }, [])
     return (  
-        <Swiper
-        modules={[Pagination]}
-        spaceBetween={0}
-        slidesPerView={slidesPerView}
-        pagination={{ clickable: true }}
-      >
-        {isLoading ? skeleton : goods.length ? goods.map((good) => {
-            return <SwiperSlide key={good.id}>
-                <CategoryCard  good = {good}/>
-            </SwiperSlide>
-        }) : (<p className={style.noGoods}>Товари відсутні</p>)}
-      </Swiper>
+        <div className={style.category__swiper}>
+            <Swiper
+            modules={[Pagination]}
+            spaceBetween={0}
+            slidesPerView={slidesPerView}
+            pagination={{ clickable: true }}
+        >
+            {isLoading ? skeleton : goods.length ? goods.map((good) => {
+                return <SwiperSlide key={good.id}>
+                    <CategoryCard  good = {good}/>
+                </SwiperSlide>
+            }) : (<p className={style.noGoods}>Товари відсутні</p>)}
+        </Swiper>
+        </div>
 
     );
 }

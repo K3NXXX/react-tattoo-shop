@@ -8,9 +8,11 @@ import telegram from "../../assets/img/telegram-icon.png"
 import viber1 from "../../assets/img/viber-icon.svg"
 import viber2 from "../../assets/img/viber2-icon.svg"
 import arrow from "../../assets/img/arrow-icon.svg"
-import { useState,useRef, useEffect } from "react"
+import { useState,useRef} from "react"
 import { useClickOutside } from "../../hooks/useClickOutside"
 import { useSelector } from "react-redux"
+import { Link } from "react-router-dom"
+import {Link as LinkScroll} from "react-scroll"
 const Header = () => {
     let [openMenu, setOpenMenu] = useState(false)
     const [expandCatalog, setExpandCatalog] = useState(false)
@@ -25,12 +27,10 @@ const Header = () => {
     }
     const listRef = useRef(null)
     const catalogSvgRef = useRef(null)
-    useClickOutside(listRef, () => {
-        if (expandCatalog) setTimeout(() => setExpandCatalog(false),3000)
-        setExpandCatalog(false)
+    useClickOutside(listRef, () => { // закриття вікна при кліку в любе місце
+        if (expandCatalog) setTimeout(() => setExpandCatalog(false),50)
     })
-   
-   
+    
     return (  
         <div  className={style.wrapper}>
             <header className={style.header}>
@@ -70,15 +70,15 @@ const Header = () => {
                         </div>
                         <div className={style.email}>
                             <img src={email} alt="email-icon" />
-                            <a href="">Mr.Driskell@gmail.com</a>
+                            <a href="mailto:Mr.Driskell@gmail.com">Mr.Driskell@gmail.com</a>
                         </div>
-                        <a href="" className={style.logo}>
+                        <Link to="/react-tattoo-shop" className={style.logo}>
                             <span className={style.logo__name}>mr. driskell</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="192" height="6" viewBox="0 0 192 6" fill="none">
                                 <path d="M0.113249 3.00002L3 5.88677L5.88675 3.00002L3 0.113264L0.113249 3.00002ZM191.887 3L189 0.113248L186.113 3L189 5.88675L191.887 3ZM3 3.50002L189 3.5L189 2.5L3 2.50002L3 3.50002Z" fill="#BB8C5F"/>
                             </svg>
                             <span>Tattoo shop</span>
-                        </a>
+                        </Link>
                     </div>
                     <div className={style.right}>
                         <a className={style.shop__bin} href="">
@@ -112,18 +112,26 @@ const Header = () => {
                             <ul className={style.phone__menu_list}>
                             {headerPhoneCategoryList.map((phonecategory, index) => (
                                 <li key={index} className={index === 0 ? `${style.phoneCatalog}` : ""}>
-                                <a href="">{phonecategory}</a>
-                                {phonecategory === "Каталог" && expandCatalog && (
-                                    <ul className={style.catalogList}>
-                                    {catalog.map((catalogItem, catalogIndex) => (
-                                        <li key={catalogIndex}>{catalogItem}</li>
-                                    ))}
-                                    </ul>
-                                )}
+                                    {phonecategory === "Каталог" ? (
+                                        <LinkScroll onClick={() => setOpenMenu(false)} to="toCatalog" smooth={true} duration={1000}> 
+                                            <a href="" className={style.catalogSpecial}>{phonecategory}</a>
+                                        </LinkScroll>
+                                    ) : (
+                                        <a href="">{phonecategory}</a>
+                                    )}
+                                    {phonecategory === "Каталог" && expandCatalog && (
+                                        <ul className={style.catalogList}>
+                                            {catalog.map((catalogItem, catalogIndex) => (
+                                                <li key={catalogIndex}>{catalogItem}</li>
+                                            ))}
+                                        </ul>
+                                    )}
                                 </li>
                             ))}
-                            <img
-                                onClick={() => setExpandCatalog(!expandCatalog)}
+                            <img 
+                                onClick={(e) =>  {
+                                    setExpandCatalog(!expandCatalog)
+                                    e.stopPropagation();}}
                                 className={style.arrow}
                                 src={arrow}
                                 alt=""
@@ -156,7 +164,7 @@ const Header = () => {
                     <p>Графік роботи: з 9:00 до 20:00</p>
                     <div className={style.email__phone}>
                         <img src={email} alt="email-icon" />
-                        <a href="">Mr.Driskell@gmail.com</a>
+                        <a href="mailto:Mr.Driskell@gmail.com">Mr.Driskell@gmail.com</a>
                     </div>
                 </div>
               )}

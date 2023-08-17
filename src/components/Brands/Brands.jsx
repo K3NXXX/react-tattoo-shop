@@ -33,11 +33,11 @@ const Brands = () => {
                 {showMore ? (
                         <p onClick={() => {
                             setImgTablet(6)
-                            setShowMore(!showMore)}} className={style.wacthAll}>Приховати</p>
+                            setShowMore(!showMore)}} className={style.watchAll}>Приховати</p>
                     ): (
                         <p onClick={() => {
                             setImgTablet(10)
-                            setShowMore(!showMore)}} className={style.wacthAll}>Дивитися всі</p>
+                            setShowMore(!showMore)}} className={style.watchAll}>Дивитися всі</p>
                 )}
             </div>
             <div className={style.brandsPC}>

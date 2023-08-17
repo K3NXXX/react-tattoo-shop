@@ -1,0 +1,122 @@
+.wrapper {
+    max-width: 1246px;
+    margin: 0 auto;
+    padding: 160px 15px 318px 15px;
+    display: flex;
+    position: relative;
+    @media (max-width:1140px) {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 160px 15px 0 15px;
+    }
+    @media (max-width:768px) {
+        padding: 72px 15px 0 15px;
+    }
+    @media (max-width:410px) {
+        padding: 60px 15px 0 15px;
+    }
+}
+.right {
+    max-width: 500px;
+    margin-right: 60px;
+    @media (max-width:1180px) {
+        margin-right: 0;
+    }
+
+    & p:first-child {
+        color:#BB8C5F;
+        font-family: Forum;
+        font-size: 75px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 100%; 
+        margin-bottom: 20px;
+        @media (max-width:510px) {
+            font-size: 35px;
+        }
+    }
+    & p:nth-child(2) {
+        color: #3E424B;
+        font-family: Jost;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%; 
+        max-width: 431px;
+        margin-bottom: 50px;
+        @media (max-width:510px) {
+            font-size: 20px;
+        }
+        @media (max-width:1140px) {
+            max-width: none;
+            text-align: center;
+        }
+    }
+    .buttons {
+        @media (max-width:1140px) {
+            flex-direction: column;
+        }
+        & a:first-child {
+            position: relative;
+            left: -15px;
+            background-image: url("../../assets/img/Subscribe/btnBg.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            color:  #FAF6F2;
+            font-family: Jost;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%; 
+            transition: 0.3s ease;
+            padding: 20px 56px;
+            margin-right: 25px;
+            transition: all ease 0.3s;
+            &:hover {
+                opacity: 0.9;
+            }
+            @media (max-width:630px) {
+                margin-right: 0px;
+                position: static;
+            }
+            @media (max-width:410px) {
+                padding: 20px 46px;
+
+            }
+        }
+        & a:last-child {
+            color:  #BB8C5F;
+            font-family: Jost;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%; 
+            @media (max-width:630px) {
+                display: block;
+                margin-top: 50px;
+            }
+        }
+    }
+}
+.left {
+    img {
+        position: absolute;
+        top:0px;
+        @media (max-width:1140px) {
+            position: static;
+        }
+        @media (max-width:630px) {
+            position: static;
+            max-width: 500px;
+        }
+        @media (max-width:510px) {
+            max-width: 400px;
+        }
+        @media (max-width:410px) {
+            max-width: 300px;
+        }
+        
+    }
+}
