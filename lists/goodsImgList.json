@@ -15,12 +15,13 @@
      "name": "Foxxx Viper Fox Golden Vintage Lot #1 RCA",
      "price": "7 730"
     },
-    {
-     "type": "new",
-     "id": 3,
-     "image": "/categoryGoods/3.png",
-     "name": "Нитровиниловые перчатки Wally Plastic S",
-     "price": "20"
+    {   
+        "category": "tattooMachines",
+        "type": "new",
+        "id": 3,
+        "image": "/categoryGoods/9.png",
+        "name": "Skinductor Vertigo Long Stroke",
+        "price": "8 550 "
     },
     {
      "type": "new",
@@ -62,13 +63,7 @@
      "name": "Verge Direct 2.1 Gunmetal",
      "price": "7 900"
     },
-    {
-        "type": "hits",
-        "id": 9,
-        "image": "/categoryGoods/9.png",
-        "name": "Skinductor Vertigo Long Stroke",
-        "price": "8 550 "
-    },
+   
     {
         "type": "hits",
         "category": "tattooMachines",
@@ -87,16 +82,173 @@
     },
     {
         "type": "popular",
+        "category": "tattooMachines",
         "id": 12,
         "image": "/categoryGoods/12.png",
         "name": "CNC X-WE Wireless Tattoo Pen",
         "price": "12 000"
-    },
+    },   
     {
+        "category": "tattooMachines",
         "type": "popular",
         "id": 13,
         "image": "/categoryGoods/13.png",
         "name": "MT Vader Pen MT RCA Cord PRO 2000.135",
         "price": "9 940"
-    }
+    },
+    {
+        "category": "tattooSets",
+        "id": 14,
+        "image": "/categoryGoods/14.jpg",
+        "name": "Тату набір Recruit Direct",
+        "price": "8 940"
+    },
+    {
+        "category": "tattooSets",
+        "id": 15,
+        "image": "/categoryGoods/15.jpg",
+        "name": "Набір для збірки Pitbool Shader Kit",
+        "price": "7 640"
+    },
+    {
+        "category": "tattooSets",
+        "id": 16,
+        "image": "/categoryGoods/16.jpg",
+        "name": "Набір для збірки Super Ring Liner Kit",
+        "price": "7 330"
+    },
+    {
+        "category": "tattooSets",
+        "id": 17,
+        "image": "/categoryGoods/17.jpg",
+        "name": "Тату набір Starter Duet",
+        "price": "8 330"
+    },
+    {
+        "category": "tattooSets",
+        "id": 18,
+        "image": "/categoryGoods/18.jpg",
+        "name": "Тату набір Starter Pen",
+        "price": "8 870"
+    },
+    {
+        "category": "holders",
+        "id": 19,
+        "image": "/categoryGoods/19.jpg",
+        "name": "Тримач Verge Grip 30 мм",
+        "price": "700"
+    },
+    {
+        "category": "holders",
+        "id": 20,
+        "image": "/categoryGoods/20.jpg",
+        "name": "Тримач  Skinductor Vertigo Grip",
+        "price": "2500"
+    },
+    {
+        "category": "holders",
+        "id": 21,
+        "image": "/categoryGoods/21.jpg",
+        "name": "Тримач для картриджа EZ Aluminum Cartridge Grip 30mm",
+        "price": "1150"
+    },
+    {
+        "category": "pedals",
+        "id": 22,
+        "image": "/categoryGoods/22.jpg",
+        "name": "Педаль MT Round Footswitch RCA Червоний Неон",
+        "price": "1500"
+    },
+    {
+        "category": "pedals",
+        "id": 23,
+        "image": "/categoryGoods/23.jpg",
+        "name": "Педаль Verge Footswitch Logo RW",
+        "price": "1300"
+    },
+    {
+        "category": "pedals",
+        "id": 24,
+        "image": "/categoryGoods/24.jpg",
+        "name": "Педаль Verge Footswitch Navy",
+        "price": "1350"
+    },
+    {
+        "category": "pedals",
+        "id": 25,
+        "image": "/categoryGoods/25.jpg",
+        "name": "Педаль Foxxx Red Footswitch",
+        "price": "2200"
+    },
+    {
+        "category": "pedals",
+        "id": 26,
+        "image": "/categoryGoods/26.jpg",
+        "name": "Педаль Foxxx Black-Pink Petal",
+        "price": "2200"
+    },
+    {
+        "category": "pedals",
+        "id": 27,
+        "image": "/categoryGoods/27.jpg",
+        "name": "Педаль Tattoomechanics Footswitch Mini Gold",
+        "price": "1600"
+    },
+    {
+        "category": "paints",
+        "id": 28,
+        "image": "/categoryGoods/28.jpg",
+        "name": "Набір фарб Tattoo Ink Сет Skin Tone",
+        "price": "3500"
+    },
+    {
+        "category": "paints",
+        "id": 29,
+        "image": "/categoryGoods/29.jpg",
+        "name": "Набір фарб Tattoo Ink Сет True Magic",
+        "price": "2500"
+    },
+    {
+        "category": "paints",
+        "id": 30,
+        "image": "/categoryGoods/30.jpg",
+        "name": "Фарба для тату Allegory Ultra BLAK 1 Oz",
+        "price": "893"
+    },
+    {
+        "category": "paints",
+        "id": 31,
+        "image": "/categoryGoods/31.jpg",
+        "name": "Фарба для тату Tattoo Ink Легкий Тон 50 мл",
+        "price": "200"
+    },
+    {
+        "category": "paints",
+        "id": 31,
+        "image": "/categoryGoods/31.jpg",
+        "name": "Фарба для тату Tattoo Ink Легкий Тон 50 мл",
+        "price": "900"
+    },
+    {
+        "category": "paints",
+        "id": 32,
+        "image": "/categoryGoods/32.jpg",
+        "name": "Фарба для тату Tattoo Ink Red Magic Intensive Red 120 мл",
+        "price": "2100"
+    },
+    {
+        "category": "paints",
+        "id": 33,
+        "image": "/categoryGoods/33.jpg",
+        "name": "Фарба для тату Tattoo Ink Letter Ink",
+        "price": "1150"
+    },
+    {
+        "category": "paints",
+        "id": 34,
+        "image": "/categoryGoods/34.jpg",
+        "name": "Фарба для тату Tattoo Ink White Magic Intensive White 120 мл",
+        "price": "1 350"
+    },
+    
 ]
