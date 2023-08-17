@@ -1,6 +1,7 @@
 [
     {
      "type": "new",
+     "category": "tattooMachines",
      "id": 1,
      "image": "/categoryGoods/1.png",
      "name": "Foxxx Kitsune Mini Black Vintage RCA",
@@ -8,6 +9,7 @@
     },
     {
      "type": "new",
+     "category": "tattooMachines",
      "id": 2,
      "image": "/categoryGoods/2.png",
      "name": "Foxxx Viper Fox Golden Vintage Lot #1 RCA",
@@ -23,12 +25,14 @@
     {
      "type": "new",
      "id": 4,
+     "category": "holders",
      "image": "/categoryGoods/4.png",
      "name": "Forever Cartridge Grip Ergo 30 mm Огненно-Рыжий",
      "price": "2 037"
     },
     {
      "type": "new",
+     "category": "tattooMachines",
      "id": 5,
      "image": "/categoryGoods/5.png",
      "name": "Verge Direct 2.1 Pink gip EGO 4 mm liners",
@@ -36,6 +40,7 @@
     },
     {
      "type": "new",
+     "category": "tattooMachines",
      "id": 6,
      "image": "/categoryGoods/6.png",
      "name": "Deuce Machines Direct Drive #7 RCA Samurai",
@@ -43,6 +48,7 @@
     },
     {
      "type": "new",
+     "category": "tattooMachines",
      "id": 7,
      "image": "/categoryGoods/7.png",
      "name": "Cyborg Machines Alter Rotary Axis Cross Sexy Nymph",
@@ -50,6 +56,7 @@
     },
     {
      "type": "new",
+     "category": "tattooMachines",
      "id": 8,
      "image": "/categoryGoods/8.png",
      "name": "Verge Direct 2.1 Gunmetal",
@@ -64,6 +71,7 @@
     },
     {
         "type": "hits",
+        "category": "tattooMachines",
         "id": 10,
         "image": "/categoryGoods/10.png",
         "name": "Verge Direct 2.1 Black",
@@ -71,6 +79,7 @@
     },
     {
         "type": "hits",
+        "category": "tattooMachines",
         "id": 11,
         "image": "/categoryGoods/11.png",
         "name": "Foxxx Kitsune Mini Vintage Aging With Gold RCA",
