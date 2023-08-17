@@ -55,6 +55,7 @@
         max-width: 229px;
         margin-bottom: 10px;
         min-height: 52px;
+        text-align: start;
     }
     .info__price {
         color:  #BB8C5F;
@@ -64,9 +65,7 @@
         font-weight: 700;
         line-height: 130%; 
         margin-bottom: 20px;
-
-
-
+        text-align: start;
     }
     .span__add {
         display: block;

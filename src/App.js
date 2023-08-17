@@ -14,7 +14,7 @@ function App() {
         <main className="main">
           <Routes>
             <Route path="/react-tattoo-shop" element={<Home/>} />
-            <Route path="catalog/:id" element={<CatalogFrame/>} />
+            <Route path="/react-tattoo-shop/catalog/:id" element={<CatalogFrame/>} />
             <Route path="*" element={<PageNotFound/>} />
           </Routes>
         </main>

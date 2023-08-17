@@ -13,7 +13,7 @@ const Catalog = () => {
             <div className={style.catalog__top}>
                 <h4 className={style.title}>Каталог</h4>
                 <div className={style.catalog__list}>
-                    {catalogList.map((catalogItem, index) => (<Link key={index} className={style.link} to={`/catalog/${index }`}>
+                    {catalogList.map((catalogItem, index) => (<Link key={index} className={style.link} to={`/react-tattoo-shop/catalog/${index}`}>
                          {/* catalogItem.url */}
                             <img src={catalogItem.image}/>
                             <p className={style.image__text}>{catalogItem.description}</p>
@@ -27,7 +27,6 @@ const Catalog = () => {
                             <p className={style.image__text}>{catalogItem.description}</p>
                         </a>))}
                     </div>
-                        <a href="" className={style.watch}>Дивитися каталог</a>
                 </div>
                 <div className={style.catalog__listPhone}>
                     <div className={style.catalog__listPhone_wrapper}>
@@ -36,7 +35,6 @@ const Catalog = () => {
                             <p className={style.image__text}>{catalogItem.description}</p>
                         </a>))}
                     </div>
-                        <a href="" className={style.watch}>Дивитися каталог</a>
                 </div>
                
             </div>

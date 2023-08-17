@@ -14,7 +14,7 @@ export const catalogList = [
     {
         id: 1,
         image: img1,
-        description: " Тату набори",
+        description: " Тату набіри",
         url: "тату-набори",
         filterName: "tattooSets",
     },
@@ -28,65 +28,65 @@ export const catalogList = [
     {
         id: 3,
         image: img3,
-        description: "Тату машинки",
+        description: " Тату машинки",
         url: "тату-машинки",
         filterName: "tattooMachines",
     },
     {
         id: 4,
         image: img4,
-        description: "Педалі та провода",
+        description: " Педалі та провода",
         url: "педалі-та-провода",
         filterName: "pedals",
     },
     {
         id: 5,
         image: img5,
-        description: "Фарби",
+        description: " Фарби",
         url: "фарби",
         filterName: "paints",
     },
-    {
-        id: 6,
-        image: img6,
-        description: "Блоки живлення",
-        url: "блоки-живлення",
-        filterName: "charging",
-    },
-    {
-        id: 7,
-        image: img7,
-        description: "Наконечники",
-        url: "наконечники",
-        filterName: "arrowhead",
+    // {
+    //     id: 6,
+    //     image: img6,
+    //     description: "Блоки живлення",
+    //     url: "блоки-живлення",
+    //     filterName: "charging",
+    // },
+    // {
+    //     id: 7,
+    //     image: img7,
+    //     description: "Наконечники",
+    //     url: "наконечники",
+    //     filterName: "arrowhead",
         
-    },
-    {
-        id: 8,
-        image: img8,
-        description: "Тату голки",
-        url: "тату-голки",
-        filterName: "needle",
-    },
-    {
-        id: 9,
-        image: img9,
-        description: "Захист, розхідники",
-        url: "захист/розхідники",
-        filterName: "protection",
-    },
-    {
-        id: 10,
-        image: img10,
-        description: "Аксесуари",
-        url: "аксесуари"
-    },
-    {
-        id: 11,
-        image: img11,
-        description: "Принтери і планшети",
-        url: "принтери/планшети"
+    // },
+    // {
+    //     id: 8,
+    //     image: img8,
+    //     description: "Тату голки",
+    //     url: "тату-голки",
+    //     filterName: "needle",
+    // },
+    // {
+    //     id: 9,
+    //     image: img9,
+    //     description: "Захист, розхідники",
+    //     url: "захист/розхідники",
+    //     filterName: "protection",
+    // },
+    // {
+    //     id: 10,
+    //     image: img10,
+    //     description: "Аксесуари",
+    //     url: "аксесуари"
+    // },
+    // {
+    //     id: 11,
+    //     image: img11,
+    //     description: "Принтери і планшети",
+    //     url: "принтери/планшети"
         
-    },
+    // },
 
 ]
