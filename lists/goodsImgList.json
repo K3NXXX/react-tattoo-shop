@@ -1,70 +1,79 @@
 [
     {
+     "forWho": "noobs",
      "type": "new",
      "category": "tattooMachines",
      "id": 1,
      "image": "/categoryGoods/1.png",
      "name": "Foxxx Kitsune Mini Black Vintage RCA",
-     "price": "6 000"
+     "price": "6000"
     },
     {
+    "forWho": "noobs",
      "type": "new",
      "category": "tattooMachines",
      "id": 2,
      "image": "/categoryGoods/2.png",
      "name": "Foxxx Viper Fox Golden Vintage Lot #1 RCA",
-     "price": "7 730"
+     "price": "7730"
     },
     {   
+        "forWho": "builders",
         "category": "tattooMachines",
         "type": "new",
         "id": 3,
         "image": "/categoryGoods/9.png",
         "name": "Skinductor Vertigo Long Stroke",
-        "price": "8 550 "
+        "price": "8550"
     },
     {
+    "forWho": "profi",   
      "type": "new",
      "id": 4,
      "category": "holders",
      "image": "/categoryGoods/4.png",
      "name": "Forever Cartridge Grip Ergo 30 mm Огненно-Рыжий",
-     "price": "2 037"
+     "price": "2037"
     },
     {
+        "forWho": "profi",
      "type": "new",
      "category": "tattooMachines",
      "id": 5,
      "image": "/categoryGoods/5.png",
      "name": "Verge Direct 2.1 Pink gip EGO 4 mm liners",
-     "price": "2 037"
+     "price": "2037"
     },
     {
+        "forWho": "noobs",
      "type": "new",
      "category": "tattooMachines",
      "id": 6,
      "image": "/categoryGoods/6.png",
      "name": "Deuce Machines Direct Drive #7 RCA Samurai",
-     "price": "6 000"
+     "price": "6000"
     },
     {
+        "forWho": "noobs",
      "type": "new",
      "category": "tattooMachines",
      "id": 7,
      "image": "/categoryGoods/7.png",
      "name": "Cyborg Machines Alter Rotary Axis Cross Sexy Nymph",
-     "price": "5 000"
+     "price": "5000"
     },
     {
+    "forWho": "builders",
      "type": "new",
      "category": "tattooMachines",
      "id": 8,
      "image": "/categoryGoods/8.png",
      "name": "Verge Direct 2.1 Gunmetal",
-     "price": "7 900"
+     "price": "7900"
     },
    
     {
+        "forWho": "builders",
         "type": "hits",
         "category": "tattooMachines",
         "id": 10,
@@ -73,65 +82,74 @@
         "price": "6000"
     },
     {
+        "forWho": "builders",
         "type": "hits",
         "category": "tattooMachines",
         "id": 11,
         "image": "/categoryGoods/11.png",
         "name": "Foxxx Kitsune Mini Vintage Aging With Gold RCA",
-        "price": "35 650"
+        "price": "35650"
     },
     {
+        "forWho": "noobs",
         "type": "popular",
         "category": "tattooMachines",
         "id": 12,
         "image": "/categoryGoods/12.png",
         "name": "CNC X-WE Wireless Tattoo Pen",
-        "price": "12 000"
+        "price": "12000"
     },   
     {
+        "forWho": "profi",
         "category": "tattooMachines",
         "type": "popular",
         "id": 13,
         "image": "/categoryGoods/13.png",
         "name": "MT Vader Pen MT RCA Cord PRO 2000.135",
-        "price": "9 940"
+        "price": "9940"
     },
     {
+        "forWho": "noobs",
         "category": "tattooSets",
         "id": 14,
         "image": "/categoryGoods/14.jpg",
         "name": "Тату набір Recruit Direct",
-        "price": "8 940"
+        "price": "8940"
     },
     {
+        "forWho": "profi",
         "category": "tattooSets",
         "id": 15,
         "image": "/categoryGoods/15.jpg",
         "name": "Набір для збірки Pitbool Shader Kit",
-        "price": "7 640"
+        "price": "7640"
     },
     {
+        "forWho": "builders",
         "category": "tattooSets",
         "id": 16,
         "image": "/categoryGoods/16.jpg",
         "name": "Набір для збірки Super Ring Liner Kit",
-        "price": "7 330"
+        "price": "7330"
     },
     {
+        "forWho": "noobs",
         "category": "tattooSets",
         "id": 17,
         "image": "/categoryGoods/17.jpg",
         "name": "Тату набір Starter Duet",
-        "price": "8 330"
+        "price": "8330"
     },
     {
+        "forWho": "profi",
         "category": "tattooSets",
         "id": 18,
         "image": "/categoryGoods/18.jpg",
         "name": "Тату набір Starter Pen",
-        "price": "8 870"
+        "price": "8870"
     },
     {
+        "forWho": "noobs",
         "category": "holders",
         "id": 19,
         "image": "/categoryGoods/19.jpg",
@@ -139,6 +157,7 @@
         "price": "700"
     },
     {
+        "forWho": "noobs",
         "category": "holders",
         "id": 20,
         "image": "/categoryGoods/20.jpg",
@@ -146,6 +165,7 @@
         "price": "2500"
     },
     {
+        "forWho": "profi",
         "category": "holders",
         "id": 21,
         "image": "/categoryGoods/21.jpg",
@@ -153,6 +173,7 @@
         "price": "1150"
     },
     {
+        "forWho": "noobs",
         "category": "pedals",
         "id": 22,
         "image": "/categoryGoods/22.jpg",
@@ -160,6 +181,7 @@
         "price": "1500"
     },
     {
+        "forWho": "builders",
         "category": "pedals",
         "id": 23,
         "image": "/categoryGoods/23.jpg",
@@ -167,6 +189,7 @@
         "price": "1300"
     },
     {
+        "forWho": "builders",
         "category": "pedals",
         "id": 24,
         "image": "/categoryGoods/24.jpg",
@@ -174,6 +197,7 @@
         "price": "1350"
     },
     {
+        "forWho": "profi",
         "category": "pedals",
         "id": 25,
         "image": "/categoryGoods/25.jpg",
@@ -181,6 +205,7 @@
         "price": "2200"
     },
     {
+        "forWho": "profi",
         "category": "pedals",
         "id": 26,
         "image": "/categoryGoods/26.jpg",
@@ -188,6 +213,7 @@
         "price": "2200"
     },
     {
+        "forWho": "noobs",
         "category": "pedals",
         "id": 27,
         "image": "/categoryGoods/27.jpg",
@@ -195,6 +221,7 @@
         "price": "1600"
     },
     {
+        "forWho": "noobs",
         "category": "paints",
         "id": 28,
         "image": "/categoryGoods/28.jpg",
@@ -202,6 +229,7 @@
         "price": "3500"
     },
     {
+        "forWho": "builders",
         "category": "paints",
         "id": 29,
         "image": "/categoryGoods/29.jpg",
@@ -209,6 +237,7 @@
         "price": "2500"
     },
     {
+        "forWho": "profi",
         "category": "paints",
         "id": 30,
         "image": "/categoryGoods/30.jpg",
@@ -216,13 +245,7 @@
         "price": "893"
     },
     {
-        "category": "paints",
-        "id": 31,
-        "image": "/categoryGoods/31.jpg",
-        "name": "Фарба для тату Tattoo Ink Легкий Тон 50 мл",
-        "price": "200"
-    },
-    {
+        "forWho": "noobs",
         "category": "paints",
         "id": 31,
         "image": "/categoryGoods/31.jpg",
@@ -230,6 +253,7 @@
         "price": "900"
     },
     {
+        "forWho": "builders",
         "category": "paints",
         "id": 32,
         "image": "/categoryGoods/32.jpg",
@@ -237,6 +261,7 @@
         "price": "2100"
     },
     {
+        "forWho": "profi",
         "category": "paints",
         "id": 33,
         "image": "/categoryGoods/33.jpg",
@@ -244,11 +269,27 @@
         "price": "1150"
     },
     {
+        "forWho": "noobs",
         "category": "paints",
         "id": 34,
         "image": "/categoryGoods/34.jpg",
         "name": "Фарба для тату Tattoo Ink White Magic Intensive White 120 мл",
-        "price": "1 350"
+        "price": "1350"
     },
-    
+    {
+        "forWho": "profi",
+        "category": "paints",
+        "id": 35,
+        "image": "/categoryGoods/35.jpg",
+        "name": "Фарба для тату Tattoo Ink Blue Magic Intensive Blue 120 мл",
+        "price": "2100"
+    },
+    {
+        "forWho": "profi",
+        "category": "paints",
+        "id": 36,
+        "image": "/categoryGoods/36.jpg",
+        "name": "Фарба для тату attoo Ink Green Magic Intensive Green 120 мл",
+        "price": "2100"
+    }
 ]
