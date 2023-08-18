@@ -4,9 +4,7 @@ import "./scss/global.scss"
 import Home from "./pages/Home";
 import Footer from "./components/Footer/Footer";
 import PageNotFound from "./components/PageNotFound/PageNotFound";
-import Holders from "./pages/Catalog/Holders";
 import CatalogFrame from "./pages/Catalog/CatalogFrame";
-import CatalogDetail from "./pages/Catalog/CatalogDetail";
 function App() {
   return (
     <div className="App">

@@ -31,7 +31,7 @@ const Home = () => {
        }else {
         searchParams = ""
        }
-        axios.get(`https://64cc9b3a2eafdcdc851a0362.mockapi.io/goods${searchParams ? `?search=${searchParams}` : ""}`)
+        axios.get(`https://64cc9b3a2eafdcdc851a0362.mockapi.io/goods?search=${searchParams}`)
             .then(res => {
                 dispatch(setGoods(res.data))
                 dispatch(setIsLoading(false))

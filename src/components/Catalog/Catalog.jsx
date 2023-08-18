@@ -22,18 +22,18 @@ const Catalog = () => {
                 </div>
                 <div className={style.catalog__listTablet}>
                     <div className={style.catalog__listTablet_wrapper}>
-                    {catalogListTablet.map((catalogItem, index) => (<a key={index} className={style.link} href="">
+                    {catalogListTablet.map((catalogItem, index) => (<Link key={index} className={style.link} to={`/react-tattoo-shop/catalog/${index}`}>
                             <img src={catalogItem.image}/>
                             <p className={style.image__text}>{catalogItem.description}</p>
-                        </a>))}
+                        </Link>))}
                     </div>
                 </div>
                 <div className={style.catalog__listPhone}>
                     <div className={style.catalog__listPhone_wrapper}>
-                    {catalogListPhone.map((catalogItem, index) => (<a key={index} className={style.link} href="">
+                    {catalogListPhone.map((catalogItem, index) => (<Link key={index} className={style.link} to={`/react-tattoo-shop/catalog/${index}`}>
                             <img src={catalogItem.image}/>
                             <p className={style.image__text}>{catalogItem.description}</p>
-                        </a>))}
+                        </Link>))}
                     </div>
                 </div>
                
