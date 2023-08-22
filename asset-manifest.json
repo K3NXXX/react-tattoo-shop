@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-tattoo-shop/static/css/main.c096e27f.css",
-    "main.js": "/react-tattoo-shop/static/js/main.f6cf52e8.js",
+    "main.css": "/react-tattoo-shop/static/css/main.763cb1e1.css",
+    "main.js": "/react-tattoo-shop/static/js/main.73d36500.js",
     "static/media/intro-bg1.png": "/react-tattoo-shop/static/media/intro-bg1.997741a18dac7d5563f9.png",
     "static/media/1.png": "/react-tattoo-shop/static/media/1.aa185cc82bf70713ffa4.png",
     "static/media/catalog12.png": "/react-tattoo-shop/static/media/catalog12.ba97cbb423382fdeff9c.png",
@@ -12,10 +12,8 @@
     "static/media/catalogTablet5.png": "/react-tattoo-shop/static/media/catalogTablet5.42e867b3903ffb863997.png",
     "static/media/catalog14.png": "/react-tattoo-shop/static/media/catalog14.22a74fddb4ae539ec511.png",
     "static/media/catalog2.png": "/react-tattoo-shop/static/media/catalog2.1da453f22ebae3620bdd.png",
-    "static/media/catalog6.png": "/react-tattoo-shop/static/media/catalog6.95c6b51404973a920af4.png",
     "static/media/catalog4.png": "/react-tattoo-shop/static/media/catalog4.584aed594615bfebe3a6.png",
     "static/media/catalog5.png": "/react-tattoo-shop/static/media/catalog5.abe0271c6de04e4e11e3.png",
-    "static/media/catalog11.png": "/react-tattoo-shop/static/media/catalog11.ae2a02a1388e8bf889e4.png",
     "static/media/catalog13.png": "/react-tattoo-shop/static/media/catalog13.1b74447166dfaa42d07a.png",
     "static/media/catalog1.png": "/react-tattoo-shop/static/media/catalog1.b77c1448fa68f8638b74.png",
     "static/media/catalogTablet2.png": "/react-tattoo-shop/static/media/catalogTablet2.115cc3cd70cb9455d2a0.png",
@@ -24,14 +22,10 @@
     "static/media/catalogPhone1.png": "/react-tattoo-shop/static/media/catalogPhone1.8b46e89a730d3954a301.png",
     "static/media/catalog3.png": "/react-tattoo-shop/static/media/catalog3.61f4952a42d77afbcf90.png",
     "static/media/catalogTablet4.png": "/react-tattoo-shop/static/media/catalogTablet4.6db23b3bc431922c6aa6.png",
-    "static/media/catalog8.png": "/react-tattoo-shop/static/media/catalog8.ef14b1b05a2462facc76.png",
     "static/media/catalogPhone4.png": "/react-tattoo-shop/static/media/catalogPhone4.6b8c88f1529c3ddd50b8.png",
     "static/media/catalogTablet3.png": "/react-tattoo-shop/static/media/catalogTablet3.977e6057ed965277b762.png",
     "static/media/catalogPhone3.png": "/react-tattoo-shop/static/media/catalogPhone3.1e54fc4b84de88f7d26e.png",
     "static/media/catalogPhone2.png": "/react-tattoo-shop/static/media/catalogPhone2.6b16d4d2ffb964f23833.png",
-    "static/media/catalog7.png": "/react-tattoo-shop/static/media/catalog7.1b1aa63a21560bbc3425.png",
-    "static/media/catalog10.png": "/react-tattoo-shop/static/media/catalog10.4b47108abc0ac1c40a57.png",
-    "static/media/catalog9.png": "/react-tattoo-shop/static/media/catalog9.3b9934849ff4b7f0e12d.png",
     "static/media/catalog15.png": "/react-tattoo-shop/static/media/catalog15.9b55ee41be09649435fb.png",
     "static/media/avatar1.png": "/react-tattoo-shop/static/media/avatar1.3ddb8fd3dd1990e13057.png",
     "static/media/favourite-icon.svg": "/react-tattoo-shop/static/media/favourite-icon.a1508ad58148d5c2f15443708dd7d9d5.svg",
@@ -39,6 +33,7 @@
     "static/media/instagramicon.svg": "/react-tattoo-shop/static/media/instagramicon.822d6a047bae27d902c49c4c923f1c09.svg",
     "static/media/viber2-icon.svg": "/react-tattoo-shop/static/media/viber2-icon.2e0e740103f07704b09e04216f568b18.svg",
     "index.html": "/react-tattoo-shop/index.html",
+    "static/media/cross.svg": "/react-tattoo-shop/static/media/cross.95dd2745929a0a4fd43570186e212d70.svg",
     "static/media/phone-icon.svg": "/react-tattoo-shop/static/media/phone-icon.c7d3882339545035f5677fef71dbedcc.svg",
     "static/media/intro-slider-btn2.svg": "/react-tattoo-shop/static/media/intro-slider-btn2.3f23d92b92df1c4679ec9a1c32422e15.svg",
     "static/media/intro-slider-btn.svg": "/react-tattoo-shop/static/media/intro-slider-btn.c85efbf0d3fe234227fa236673b5f853.svg",
@@ -58,11 +53,11 @@
     "static/media/new.svg": "/react-tattoo-shop/static/media/new.665339dc9a968f795dc8.svg",
     "static/media/arrow-icon.svg": "/react-tattoo-shop/static/media/arrow-icon.65fdc6515fe90e8619f350908a22a79b.svg",
     "static/media/hover-line.svg": "/react-tattoo-shop/static/media/hover-line.a82e0207a7adbc030a9b.svg",
-    "main.c096e27f.css.map": "/react-tattoo-shop/static/css/main.c096e27f.css.map",
-    "main.f6cf52e8.js.map": "/react-tattoo-shop/static/js/main.f6cf52e8.js.map"
+    "main.763cb1e1.css.map": "/react-tattoo-shop/static/css/main.763cb1e1.css.map",
+    "main.73d36500.js.map": "/react-tattoo-shop/static/js/main.73d36500.js.map"
   },
   "entrypoints": [
-    "static/css/main.c096e27f.css",
-    "static/js/main.f6cf52e8.js"
+    "static/css/main.763cb1e1.css",
+    "static/js/main.73d36500.js"
   ]
 }
