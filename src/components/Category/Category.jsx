@@ -12,6 +12,8 @@ const Category = ({activeCategory, onClickActiveCategory} ) => {
     const skeleton = [...new Array(4)].map((_, index) => (<Skeleton key={index}/>))
     const goods = useSelector(state => state.categorySlice.goods)
     const categoryListRef = useRef(null)
+    
+    console.log(goods)
     return (  
         <section className={style.wrapper}>
             <ul ref={categoryListRef} className={style.category__list}>

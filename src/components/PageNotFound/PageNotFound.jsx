@@ -13,7 +13,7 @@ const PageNotFound = () => {
                 <p>Ця сторінка не знайдена, ми вже працюємо, щоб її відновити!</p>
                 <div className={style.buttons}>
                     <Link to="/react-tattoo-shop">Вернутися на головну</Link>
-                    <a href="">Вернутися в каталог</a>
+                    <Link to="/react-tattoo-shop/catalog/2">Вернутися в каталог</Link>
                 </div>
             </div>
             <div className={style.left}>

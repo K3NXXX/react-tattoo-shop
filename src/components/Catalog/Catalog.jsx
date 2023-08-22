@@ -41,26 +41,26 @@ const Catalog = () => {
             <div className={style.catalog__bottom}>
                 <div className={style.left}>
                     <img src={catalog12} alt="catalogImg"/>
-                    <p>Фарби Lip Nitn</p>
-                    <a href="">Дивитися в каталозі </a>
+                    <p>Фарби True Magic</p>
+                    <Link to="/react-tattoo-shop/catalog/4">Дивитися в каталозі </Link>
                 </div>
                 <div className={style.right}>
                     <img src={catalog13} alt="catalogImg"/>
-                    <p>Foxx viper - хіт 2023 року</p>
-                    <a href="">Дивитися в каталозі </a>
+                    <p>Foxx kitsune - хіт 2023 року</p>
+                    <Link to="/react-tattoo-shop/catalog/2">Дивитися в каталозі </Link>
                   
                 </div>
             </div>
             <div className={style.catalog__bottomPhone}>
                 <div className={style.left}>
                     <img src={catalog14} alt="catalogImg"/>
-                    <p>Фарби Lip Nitn</p>
-                    <a href="">Дивитися в каталозі </a>
+                    <p>Фарби True Magic</p>
+                    <Link to="/react-tattoo-shop/catalog/4">Дивитися в каталозі </Link>
                 </div>
                 <div className={style.right}>
                     <img src={catalog15} alt="catalogImg"/>
-                    <p>Foxx viper -<br/> хіт 2023 року</p>
-                    <a href="">Дивитися в каталозі </a>
+                    <p>Foxx kitsune -<br/> хіт 2023 року</p>
+                    <Link to="/react-tattoo-shop/catalog/2">Дивитися в каталозі </Link>
                   
                 </div>
             </div>

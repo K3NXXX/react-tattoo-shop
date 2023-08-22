@@ -23,6 +23,8 @@ const CatalogFrame = () => {
     const handleMaxPriceChange = (event) => {
         setMaxPrice(event.target.value)
     }
+   
+    
 
     useEffect(() => {
         const resizeWindow = () => {
@@ -54,6 +56,8 @@ const CatalogFrame = () => {
             dispatch(setCatalogGoods(res.data))
         })
     }, [dispatch, filterButton])
+
+   
     return (  
         <div className={style.wrapper}>
             <div className={style.path}>

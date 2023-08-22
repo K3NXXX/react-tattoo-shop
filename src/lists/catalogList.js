@@ -3,13 +3,6 @@ import img2 from "../../src/assets/img/Catalog/catalog2.png"
 import img3 from "../../src/assets/img/Catalog/catalog3.png"
 import img4 from "../../src/assets/img/Catalog/catalog4.png"
 import img5 from "../../src/assets/img/Catalog/catalog5.png"
-import img6 from "../../src/assets/img/Catalog/catalog6.png"
-import img7 from "../../src/assets/img/Catalog/catalog7.png"
-import img8 from "../../src/assets/img/Catalog/catalog8.png"
-import img9 from "../../src/assets/img/Catalog/catalog9.png"
-import img10 from "../../src/assets/img/Catalog/catalog10.png"
-import img11 from "../../src/assets/img/Catalog/catalog11.png"
-
 export const catalogList = [
     {
         id: 1,

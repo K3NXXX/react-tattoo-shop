@@ -1,0 +1,116 @@
+.wrapper {
+    max-width: 1246px;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+.path {
+    color: #D0D0D0;
+    font-family: Jost;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; 
+    margin-bottom: 30px;
+    a {
+        color: #D0D0D0;
+        font-family: Jost;
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%; 
+        &:last-child {
+            color:  #636b78;
+        }
+    }
+}
+.title {
+    color: #3E424B;
+    font-family: Forum;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    margin-bottom: 38px;
+}
+.content {
+    display: grid;
+    grid-template-columns: 804px 392px;
+    justify-content: space-between;
+    .left {
+        .left__top {
+            display: flex;
+            .left__top_name {
+                margin-right: 345px;
+            }
+            .left__top_right {
+                display: flex;
+                justify-content: space-around;
+                gap: 0 115px;
+            }
+        }
+        .goods {
+            display: flex;
+            flex-direction: column;
+            gap: 20px 0;
+            margin-bottom: 60px;
+        }
+    }
+    .line {
+        margin-top: 15px;
+        margin-bottom: 30px;
+    }
+    .right {
+        display: flex;
+        flex-direction: column;
+        gap: 25px 0;
+        color: #3E424B;
+        font-family: Jost;
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%; 
+        padding: 30px 40px;
+        max-height: 300px;
+        background-color: #F5F5F5;
+        & div:first-child, div:last-child{
+            display: flex;
+            justify-content: space-between;
+            .right__number {
+                font-weight: 500;
+            }
+        }
+        .sum {
+            display: flex;
+            justify-content: space-between;
+            color: #3e424b;
+            font-family: Jost;
+            font-size: 25px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 115%; 
+        }
+        button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color:  #faf6f2;
+            text-align: center;
+            font-family: Jost;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%; 
+            background-image: url("../../assets/img/intro-btn.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            width: 332px;
+            height: 70px;
+            margin-top: 50px;
+            transition: 0.3s ease;
+            &:hover {
+                opacity: 0.9;
+            }
+        }
+    }
+}

@@ -8,14 +8,20 @@ import telegram from "../../assets/img/telegram-icon.png"
 import viber1 from "../../assets/img/viber-icon.svg"
 import viber2 from "../../assets/img/viber2-icon.svg"
 import arrow from "../../assets/img/arrow-icon.svg"
-import { useState,useRef} from "react"
+import { useState,useRef, useEffect} from "react"
 import { useClickOutside } from "../../hooks/useClickOutside"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 import {Link as LinkScroll} from "react-scroll"
+import popupClose from "../../assets/img/Header/popupClose.png"
+import RegistrationForm from "./RegistrationForm"
+
 const Header = () => {
+    const dispatch = useDispatch()
     let [openMenu, setOpenMenu] = useState(false)
+    const [clickAccount, setClickAccount] = useState(false)
     const [expandCatalog, setExpandCatalog] = useState(false)
+    const [searchValue, setSearchValue] = useState("")
     const favouriteCount = useSelector(state => state.categorySlice.favouriteCount)
     const price = useSelector(state => state.categorySlice.price)
     const binCount = useSelector(state => state.categorySlice.binCount)
@@ -25,15 +31,31 @@ const Header = () => {
     const toggleMenu = () => {
         setOpenMenu(!openMenu)
     }
+    const popupRef = useRef(null) 
     const listRef = useRef(null)
     const catalogSvgRef = useRef(null)
     useClickOutside(listRef, () => { // закриття вікна при кліку в любе місце
         if (expandCatalog) setTimeout(() => setExpandCatalog(false),50)
     })
-    
+    useClickOutside(popupRef, () => { 
+        if(clickAccount) setTimeout(() => setClickAccount(false),50)
+    })
     return (  
-        <div  className={style.wrapper}>
-            <header className={style.header}>
+        <div className={style.wrapper}>
+            {clickAccount && (
+                   <div  className={ style.popup_bg }>
+                   <div ref={popupRef} className={style.popup}>
+                       <img onClick={() => setClickAccount(false)} src={popupClose} alt="popupClose" />
+                         <div className={style.choose}>
+                             <span>Ввійти</span>
+                             <span>Зареєструватися</span>
+                         </div>
+                         <RegistrationForm/>
+                   </div>
+               </div>
+            )}
+                 
+            <header  className={style.header}>
                 <div className={style.top}>
                     <div className={style.left}>
                         <div className={style.menu}>
@@ -49,7 +71,7 @@ const Header = () => {
                             </svg>
                             )}
                             <div className={style.phone__search}>
-                                <input className={style.search__input} type="text" placeholder="Пошук"/>
+                                <input value={searchValue} onChange={(e) => setSearchValue(e.target.value)} className={style.search__input} type="text" placeholder="Пошук"/>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
                                     <ellipse cx="13.865" cy="13.865" rx="7.86499" ry="7.86499" stroke="#636B78" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                                     <path d="M19.3353 19.7437L22.4188 22.8192" stroke="#636B78" strokeWidth="1.5" strokeLinecap="square" strokeLinejoin="round"/>
@@ -57,7 +79,7 @@ const Header = () => {
                             </div>
                         </div>
                        
-                        <div className={style.contacts}>
+                        <div  className={style.contacts}>
                             <div className={style.contacts__phone}>
                                 <img src={phone} alt="phone-icon" />
                                 <a href="tel:+380975525252"><span className={style.phone__number}>+380 97 552-52-52</span></a>
@@ -81,13 +103,13 @@ const Header = () => {
                         </Link>
                     </div>
                     <div className={style.right}>
-                        <a className={style.shop__bin} href="">
-                            <span>{price} ₴</span>
+                        <Link className={style.shop__bin} to="/react-tattoo-shop/cart">
+                            <span>{price}₴</span>
                             <img src={shop_bin} alt="shop bin" />
                             {binCount === 0 ? "" : (
                                 <span className={style.bin__number}>{binCount}</span>
                             )}
-                        </a>
+                        </Link>
                         <a className={style.header__favLink} href="">
                             <img src={favourite}   alt="favourite" />
                             {favouriteCount === 0 ? "" : (
@@ -95,10 +117,9 @@ const Header = () => {
                             )}
 
                         </a>
-                        <a  href="">
-                            <img src={account} alt="account" />
-                        </a>
+                            <img onClick={() => setClickAccount(true)} style={{cursor: "pointer"}} src={account} alt="account" />
                     </div>
+                    
                 </div>
                 <svg className={style.svg__line} xmlns="http://www.w3.org/2000/svg" width="1216" height="6" viewBox="0 0 1216 6" fill="none">
                     <path d="M5 2.5L0 0.113249V5.88675L5 3.5V2.5ZM1211 3.5L1216 5.88675V0.113249L1211 2.5V3.5ZM4.5 3.5H1211.5V2.5H4.5V3.5Z" fill="#524336"/>
@@ -205,6 +226,8 @@ const Header = () => {
                         </ul>
                     </div>
                 </div>
+               
+              
             </header>
         </div>
     );

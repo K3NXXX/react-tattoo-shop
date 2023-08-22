@@ -1,0 +1,45 @@
+.good {
+    display: flex;
+    align-items: center;
+    max-width: 192px;
+    color: #3E424B;
+    font-family: Jost;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; 
+    .goodImg {
+        max-width: 103px;
+        margin-right: 20px;
+    }
+    .name {
+        margin-right: 70px;
+        min-width: 192px;
+        max-width: 192px;
+       
+    }
+    .price {
+        margin-right: 85px;
+        
+    }
+    .quantity {
+        display: flex;
+        gap: 0 25px;
+        align-items: center;
+        margin-right: 87px;
+        svg {
+            cursor: pointer;
+        }
+        .count__number {
+            border: 1.5px solid  #bb8c5f;
+            padding: 5px 12px;
+        }
+    }
+    .goodTotalPrice {
+        margin-right: 30px;
+    }
+    .deleteGood {
+        margin-right: 0;
+    }
+
+}
