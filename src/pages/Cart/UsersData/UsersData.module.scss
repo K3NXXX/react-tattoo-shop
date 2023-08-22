@@ -1,0 +1,98 @@
+.usersData__form {
+    display: flex;
+    flex-direction: column;
+    gap: 50px 0;
+    padding-bottom: 160px;
+    p {
+        color: #3E424B;
+        font-family: Jost;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 115%; 
+        margin-bottom: 20px;
+    }
+    .form__top {
+        .top__row {
+            display: grid;
+            grid-template-columns: 289px 186px 289px;
+            gap: 0px 20px;
+            .column {
+                display: flex;
+                flex-direction: column;
+                gap: 10px 0;
+                input {
+                    font-size: 16px;
+                    font-family: Jost;
+                    padding: 23px 20px 23px 30px;
+                }
+            }
+        }
+    }
+    .form__bottom  {
+        .bottom__row {
+            .home {
+                display: grid;
+                grid-template-columns: 289px 495px;
+                gap: 0 20px;
+                margin-bottom: 30px;
+                .column {
+                    input {
+                        padding: 23px 30px;
+                        font-size: 16px;
+                        font-family: Jost;
+                    }
+                }
+            }
+            .flat {
+                display: grid;
+                grid-template-columns: repeat(4,184px);
+                gap: 0 20px;
+                .column {
+                    input {
+                        padding: 23px 30px;
+                        font-size: 16px;
+                        font-family: Jost;
+                    }
+                }
+            }
+        }
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 10px 0;
+        }
+    }
+    button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color:  #faf6f2;
+        text-align: center;
+        font-family: Jost;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%; 
+        background-image: url("../../../assets/img/intro-btn.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        width: 332px;
+        height: 70px;
+        transition: 0.3s ease;
+        margin-left: -20px;
+        &:hover {
+            opacity: 0.9;
+        }
+    }
+    .popup {
+        width: 200px;
+        height: 500px;
+        background-color: #ad5702;
+        p {
+            font-size: 100px;
+        }
+    }
+    
+}

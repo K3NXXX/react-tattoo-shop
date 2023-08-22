@@ -17,14 +17,13 @@ import popupClose from "../../assets/img/Header/popupClose.png"
 import RegistrationForm from "./RegistrationForm"
 
 const Header = () => {
+   
     const dispatch = useDispatch()
     let [openMenu, setOpenMenu] = useState(false)
     const [clickAccount, setClickAccount] = useState(false)
     const [expandCatalog, setExpandCatalog] = useState(false)
     const [searchValue, setSearchValue] = useState("")
     const favouriteCount = useSelector(state => state.categorySlice.favouriteCount)
-    const price = useSelector(state => state.categorySlice.price)
-    const binCount = useSelector(state => state.categorySlice.binCount)
     const catalog = ["Новинки", "Набори для тату", "Тату машинки", "Тату фарби", "Тату голки", "Тату тримачі", "Тату наконечники", "Блоки живлення", "Педалі та провода", "Аксесуари", "Принтери і планшети", "Захист, ємності, розхідн..."]
     const headerCategoryList = ["Промокоди", "Знижки", "Допомога", "Про нас", "Контакти" ]
     const headerPhoneCategoryList = ["Каталог", "Контакти", "Промокоди", "Знижки", "Допомога", "Про нас", "Вибране", "Особистий кабінет" ]
@@ -40,6 +39,9 @@ const Header = () => {
     useClickOutside(popupRef, () => { 
         if(clickAccount) setTimeout(() => setClickAccount(false),50)
     })
+
+    const {items, totalPrice} = useSelector(state => state.cartSlice)
+    const totalCount = items.reduce((sum, item ) => sum + item.count, 0)
     return (  
         <div className={style.wrapper}>
             {clickAccount && (
@@ -104,11 +106,9 @@ const Header = () => {
                     </div>
                     <div className={style.right}>
                         <Link className={style.shop__bin} to="/react-tattoo-shop/cart">
-                            <span>{price}₴</span>
+                            <span>{totalPrice}₴</span>
                             <img src={shop_bin} alt="shop bin" />
-                            {binCount === 0 ? "" : (
-                                <span className={style.bin__number}>{binCount}</span>
-                            )}
+                            <span className={style.bin__number}>{totalCount > 0 ? totalCount : ""}</span>
                         </Link>
                         <a className={style.header__favLink} href="">
                             <img src={favourite}   alt="favourite" />

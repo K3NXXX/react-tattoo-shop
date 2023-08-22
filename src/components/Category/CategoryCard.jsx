@@ -2,6 +2,7 @@ import { useState } from "react";
 import style from "./CategoryCard.module.scss"
 import { useDispatch, useSelector } from "react-redux";
 import { setBinCount, setClickedIdFavorite, setFavouriteCount, setPrice} from "../../redux/slices/categorySlice";
+import { addItems } from "../../redux/slices/cartSlice";
 
 const CategoryCard = ({good}) => {
     const [selectSvg, setSelectSvg] = useState(false)
@@ -13,6 +14,22 @@ const CategoryCard = ({good}) => {
     const clickedIdFavorite= useSelector(state => state.categorySlice.clickedIdFavorite)
     let price= useSelector(state => state.categorySlice.price)
     const dispatch = useDispatch()
+    
+    const cartItem = useSelector(state => state.cartSlice.items.find(obj => obj.id === good.id))
+    const addedCount = cartItem ? cartItem.count : 0
+    const {items} = useSelector(state => state.cartSlice)
+    const totalCount = items.reduce((sum, item ) => sum + item.count, 0)
+    const onClickAdd = () => {
+        const item = {
+            id: good.id,
+            image: good.image,
+            name: good.name,
+            price: parseFloat(good.price.replace(/\s+/g, ""))
+        }
+        dispatch(addItems(item))
+        dispatch(setBinCount(binCount + 1))
+        setBinClick(true)
+    }
     return (  
         <>
             <div onMouseEnter={() => setSelectCard(true)} onMouseLeave={() => setSelectCard(false)} className={style.categoryCard}>
@@ -44,34 +61,7 @@ const CategoryCard = ({good}) => {
                 <div className={style.card__info}>
                     <p className={style.info__name}>{good.name}</p> 
                     <p className={style.info__price}>{good.price} ₴</p>
-                    {binClick ? (
-                        <div className={style.binClicked}>
-                            <svg onClick={() => {
-                                dispatch(setBinCount(binCount - 1))
-                                dispatch(setPrice(price - parseFloat(good.price.replace(/\s+/g, ""))))
-                                if (binCount === 1)  {setBinClick(false)}
-                                }} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M7 13H18V12H7V13Z" fill="#3E424B"/>
-                            </svg>
-                            <div className={style.binClickedCount}>
-                                <span>{binCount}шт</span>
-                                <span>В корзині</span>
-                            </div>
-                            <svg onClick={() => {
-                                dispatch(setBinCount(binCount + 1))
-                                dispatch(setPrice(price + parseFloat(good.price.replace(/\s+/g, ""))))
-
-                                }} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M12 12V7H13V12H18V13H13V18H12V13H7V12H12Z" fill="#3E424B"/>
-                            </svg>
-                        </div>
-                    ) : (
-                        <span onClick={() => {
-                            dispatch(setPrice(price + parseFloat(good.price.replace(/\s+/g, ""))))
-                            dispatch(setBinCount(binCount + 1))
-                            setBinClick(true)
-                        }} className={style.span__add}>Додати в корзину</span>
-                    )}
+                    <span onClick={onClickAdd} className={style.span__add}>Додати в корзину</span>
                 </div>
             </div>
             <div  className={style.categoryCard__phone}>
@@ -113,7 +103,7 @@ const CategoryCard = ({good}) => {
                             <path d="M7 13H18V12H7V13Z" fill="#3E424B"/>
                             </svg>
                             <div className={style.binClickedCount}>
-                                <span>{binCount}шт</span>
+                                <span>{addedCount}шт</span>
                                 <span>В корзині</span>
                             </div>
                             <svg onClick={() => {

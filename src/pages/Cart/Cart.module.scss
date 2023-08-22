@@ -40,12 +40,11 @@
         .left__top {
             display: flex;
             .left__top_name {
-                margin-right: 345px;
+                margin-right: 356px;
             }
             .left__top_right {
                 display: flex;
-                justify-content: space-around;
-                gap: 0 115px;
+                gap: 0 85px;
             }
         }
         .goods {
@@ -53,6 +52,7 @@
             flex-direction: column;
             gap: 20px 0;
             margin-bottom: 60px;
+            min-height: 200px;
         }
     }
     .line {
@@ -71,6 +71,7 @@
         line-height: 140%; 
         padding: 30px 40px;
         max-height: 300px;
+        margin-bottom: 50px;
         background-color: #F5F5F5;
         & div:first-child, div:last-child{
             display: flex;
@@ -89,7 +90,7 @@
             font-weight: 700;
             line-height: 115%; 
         }
-        button {
+        .backToCatalog {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -112,5 +113,110 @@
                 opacity: 0.9;
             }
         }
+        
+    }
+}
+.popup_bg {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.75);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+    z-index: 70;
+}
+.popup_hide {
+    display: none;
+}
+.popup {
+    width: 691px;
+    height: 460px;
+    background-color: #F5F5F5;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 60px 70px;
+    position: relative;
+    .thanks {
+        color:  #BB8C5F;
+        font-family: Roboto;
+        font-size: 46px;
+        text-align: center;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 100%; 
+        margin-bottom: 16px;
+    }
+    .number {
+        color:  #3E424B;
+        font-family: Jost;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 140%; 
+        margin-bottom: 16px;
+        span {
+            color: #BB8C5F;
+        }
+    }
+    .info {
+        color:  #3E424B;
+        font-family: Jost;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%; 
+        margin-bottom: 70px;
+    }
+    .popup__buttons {
+        & a:first-child {
+            position: relative;
+            left: -15px;
+            background-image: url("../../assets/img/Subscribe/btnBg.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            color:  #FAF6F2;
+            font-family: Jost;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%; 
+            transition: 0.3s ease;
+            padding: 20px 56px;
+            margin-right: 25px;
+            transition: all ease 0.3s;
+            &:hover {
+                opacity: 0.9;
+            }
+            @media (max-width:630px) {
+                margin-right: 0px;
+                position: static;
+            }
+            @media (max-width:410px) {
+                padding: 20px 46px;
+
+            }
+        }
+        & a:last-child {
+            color:  #BB8C5F;
+            font-family: Jost;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%; 
+            @media (max-width:630px) {
+                display: block;
+                margin-top: 50px;
+            }
+        }
+    }
+    .close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        cursor: pointer;
     }
 }

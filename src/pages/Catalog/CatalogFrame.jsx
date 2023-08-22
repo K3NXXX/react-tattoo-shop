@@ -16,7 +16,6 @@ const CatalogFrame = () => {
     const [filterButton, setFilterButton] = useState("")
     const [activeBtn, setActiveBtn] = useState("")
     const dispatch = useDispatch()
-
     const handleMinPriceChange = (event) => {
         setMinPrice(event.target.value);
       };
