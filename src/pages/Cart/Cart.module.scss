@@ -2,6 +2,8 @@
     max-width: 1246px;
     margin: 0 auto;
     padding-top: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 .path {
     color: #D0D0D0;
@@ -31,14 +33,30 @@
     font-weight: 400;
     line-height: 100%;
     margin-bottom: 38px;
+    @media (max-width: 768px) {
+        font-size: 50px;
+    }
+    @media (max-width: 500px) {
+        font-size: 25px;
+    }
 }
 .content {
     display: grid;
     grid-template-columns: 804px 392px;
     justify-content: space-between;
+    @media (max-width:1270px) {
+    grid-template-columns: 1fr;
+    justify-content: center;
+    }
     .left {
+        @media (max-width:1270px) {
+            justify-self: center;
+            }
         .left__top {
             display: flex;
+            @media (max-width: 830px) {
+                display: none;
+            }
             .left__top_name {
                 margin-right: 356px;
             }
@@ -53,11 +71,19 @@
             gap: 20px 0;
             margin-bottom: 60px;
             min-height: 200px;
+            padding: 0 15px;
+            .empty {
+                max-width: 200px;
+            }
         }
     }
     .line {
         margin-top: 15px;
         margin-bottom: 30px;
+        @media (max-width:830px) {
+           display: none;
+        }
+        
     }
     .right {
         display: flex;
@@ -73,6 +99,16 @@
         max-height: 300px;
         margin-bottom: 50px;
         background-color: #F5F5F5;
+        @media (max-width:1270px) {
+            width: 700px;
+            justify-self: center;
+        }
+        @media (max-width: 830px) {
+            width: 400px;
+        }
+        @media (max-width:430px) {
+            width: 300px;
+        }
         & div:first-child, div:last-child{
             display: flex;
             justify-content: space-between;
@@ -91,7 +127,8 @@
             line-height: 115%; 
         }
         .backToCatalog {
-            display: flex;
+            margin: 0 auto;
+            display: inline-flex;
             justify-content: center;
             align-items: center;
             color:  #faf6f2;
@@ -111,6 +148,9 @@
             transition: 0.3s ease;
             &:hover {
                 opacity: 0.9;
+            }
+            @media (max-width:430px) {
+                width: 230px;
             }
         }
         
@@ -139,6 +179,21 @@
     transform: translate(-50%, -50%);
     padding: 60px 70px;
     position: relative;
+    @media (max-width: 800px) {
+        width: 500px;
+        height: 550px;
+        padding: 60px 70px 30px 70px;
+    }
+    @media (max-width: 550px) {
+        width: 400px;
+        height: 480px;
+        padding: 60px 30px 30px 30px;
+    }
+    @media (max-width: 430px) {
+        width: 300px;
+        padding: 60px 20px 30px 20px;
+        height: 490px;
+    }
     .thanks {
         color:  #BB8C5F;
         font-family: Roboto;
@@ -148,6 +203,12 @@
         font-weight: 400;
         line-height: 100%; 
         margin-bottom: 16px;
+        @media (max-width: 800px) {
+            font-size: 30px;
+        }
+        @media (max-width: 550px) {
+            font-size: 20px;
+        }
     }
     .number {
         color:  #3E424B;
@@ -160,6 +221,9 @@
         span {
             color: #BB8C5F;
         }
+        @media (max-width: 800px) {
+            text-align: center;
+        }
     }
     .info {
         color:  #3E424B;
@@ -169,8 +233,21 @@
         font-weight: 400;
         line-height: 140%; 
         margin-bottom: 70px;
+        @media (max-width: 800px) {
+            text-align: center;
+        }
+        @media (max-width: 550px) {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
     }
     .popup__buttons {
+        @media (max-width: 800px) {
+            display: flex;
+            flex-direction: column;
+            margin:  0 auto;
+            gap: 30px 0;
+        }
         & a:first-child {
             position: relative;
             left: -15px;
@@ -197,8 +274,17 @@
             }
             @media (max-width:410px) {
                 padding: 20px 46px;
-
             }
+            @media (max-width: 800px) {
+                margin-right: 0px;
+                left: 0;
+                text-align: center;
+            }
+            @media (max-width: 430px) {
+                padding: 20px 10px;
+                font-size: 17px;
+            }
+
         }
         & a:last-child {
             color:  #BB8C5F;
@@ -209,8 +295,12 @@
             line-height: 150%; 
             @media (max-width:630px) {
                 display: block;
-                margin-top: 50px;
             }
+            @media (max-width: 800px) {
+                text-align: center;
+
+            }
+           
         }
     }
     .close {
@@ -218,5 +308,9 @@
         top: 20px;
         right: 30px;
         cursor: pointer;
+        @media (max-width: 430px) {
+            top: 10px;
+            right: 20px;
+        }
     }
 }

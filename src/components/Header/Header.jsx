@@ -17,7 +17,6 @@ import popupClose from "../../assets/img/Header/popupClose.png"
 import RegistrationForm from "./RegistrationForm"
 
 const Header = () => {
-   
     const dispatch = useDispatch()
     let [openMenu, setOpenMenu] = useState(false)
     const [clickAccount, setClickAccount] = useState(false)

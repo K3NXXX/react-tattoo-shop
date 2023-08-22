@@ -73,7 +73,7 @@ const UsersData = () => {
                             <input type="text" placeholder="324"/>
                         </div>
                         <div className={style.column}>
-                            <label>Підїзд</label>
+                            <label>Під'їзд</label>
                             <input type="text" placeholder="5"/>
                         </div>
                         <div className={style.column}>
@@ -88,7 +88,7 @@ const UsersData = () => {
                 </div>
             </div>
             {(errors.name || errors.phone || errors.email || errors.city || errors.flat) && <div>Дані вказано не всі або некоректно</div>}
-            {isEmpty ? "Додайте товар, щоб оформити замовлення" : ""}
+            <div className={style.empty__error}>{isEmpty ? "Додайте товар, щоб оформити замовлення" : ""}</div>
             <button disabled={isEmpty}>Оформити замовлення</button>
         </form>
     );

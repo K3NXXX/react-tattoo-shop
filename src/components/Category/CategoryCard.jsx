@@ -61,7 +61,9 @@ const CategoryCard = ({good}) => {
                 <div className={style.card__info}>
                     <p className={style.info__name}>{good.name}</p> 
                     <p className={style.info__price}>{good.price} ₴</p>
-                    <span onClick={onClickAdd} className={style.span__add}>Додати в корзину</span>
+                    {selectCard && (
+                        <span onClick={onClickAdd} className={style.span__add}>Додати в корзину</span>
+                    )}
                 </div>
             </div>
             <div  className={style.categoryCard__phone}>
@@ -93,34 +95,7 @@ const CategoryCard = ({good}) => {
                 <div className={style.card__info}>
                     <p className={style.info__name}>{good.name}</p> 
                     <p className={style.info__price}>{good.price} ₴</p>
-                    {binClick ? (
-                        <div className={style.binClicked}>
-                            <svg onClick={() => {
-                                dispatch(setBinCount(binCount - 1))
-                                dispatch(setPrice(price - parseFloat(good.price.replace(/\s+/g, ""))))
-                                if (binCount === 1)  {setBinClick(false)}
-                                }} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M7 13H18V12H7V13Z" fill="#3E424B"/>
-                            </svg>
-                            <div className={style.binClickedCount}>
-                                <span>{addedCount}шт</span>
-                                <span>В корзині</span>
-                            </div>
-                            <svg onClick={() => {
-                                dispatch(setBinCount(binCount + 1))
-                                dispatch(setPrice(price + parseFloat(good.price.replace(/\s+/g, ""))))
-
-                                }} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M12 12V7H13V12H18V13H13V18H12V13H7V12H12Z" fill="#3E424B"/>
-                            </svg>
-                        </div>
-                    ) : (
-                        <span onClick={() => {
-                            dispatch(setPrice(price + parseFloat(good.price.replace(/\s+/g, ""))))
-                            dispatch(setBinCount(binCount + 1))
-                            setBinClick(true)
-                        }} className={style.span__add}>Додати в корзину</span>
-                    )}
+                        <span onClick={onClickAdd} className={style.span__add}>Додати в корзину</span>
                 </div>
             </div>  
         </>

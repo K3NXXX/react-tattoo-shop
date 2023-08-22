@@ -2,7 +2,10 @@
     display: flex;
     flex-direction: column;
     gap: 50px 0;
-    padding-bottom: 160px;
+    padding-bottom: 80px;
+    @media (max-width:1270px) {
+        justify-self: center;
+        }
     p {
         color: #3E424B;
         font-family: Jost;
@@ -11,12 +14,27 @@
         font-weight: 700;
         line-height: 115%; 
         margin-bottom: 20px;
+        @media (max-width:830px) {
+            text-align: center;
+        }
+        @media (max-width: 430px) {
+            font-size: 17px;
+        }
+        
     }
     .form__top {
         .top__row {
             display: grid;
             grid-template-columns: 289px 186px 289px;
             gap: 0px 20px;
+            @media (max-width: 830px) {
+                grid-template-columns: 400px;
+                gap: 20px 0px;
+                justify-content: center;
+            }
+            @media (max-width:430px) {
+                grid-template-columns: 300px;
+            }
             .column {
                 display: flex;
                 flex-direction: column;
@@ -36,6 +54,14 @@
                 grid-template-columns: 289px 495px;
                 gap: 0 20px;
                 margin-bottom: 30px;
+                @media (max-width: 830px) {
+                    grid-template-columns: 400px;
+                    gap: 20px 0px;
+                    justify-content: center;
+                }
+                @media (max-width:430px) {
+                    grid-template-columns: 300px;
+                }
                 .column {
                     input {
                         padding: 23px 30px;
@@ -48,6 +74,14 @@
                 display: grid;
                 grid-template-columns: repeat(4,184px);
                 gap: 0 20px;
+                @media (max-width: 830px) {
+                    grid-template-columns: 190px 190px;
+                    gap: 20px 20px;
+                    justify-content: center;
+                }
+                @media (max-width:430px) {
+                    grid-template-columns: 140px 140px;
+                }
                 .column {
                     input {
                         padding: 23px 30px;
@@ -78,13 +112,23 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
-        width: 332px;
+        width: 320px;
         height: 70px;
         transition: 0.3s ease;
         margin-left: -20px;
         &:hover {
             opacity: 0.9;
         }
+        @media (max-width: 830px) {
+            margin: 0 auto;
+        }
+    }
+    .empty__error {
+        @media (max-width: 430px) {
+            text-align: center;
+            margin: 0 auto;
+        }
+       
     }
     .popup {
         width: 200px;
