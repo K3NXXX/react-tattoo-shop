@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
+import { fetchGoods } from "./categorySlice"
 
 const initialState = {
     items: [],
@@ -39,8 +40,8 @@ const cartSlice = createSlice({
         setSuccessData(state,action) {
             state.successData = action.payload
         }
-        
     }
+   
 })
 export const {addItems, removeItems, minusItems, setSuccessData} = cartSlice.actions
 export default cartSlice.reducer

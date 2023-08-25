@@ -11,16 +11,10 @@ import Feedback from "../components/Feedback/Feedback";
 import Subscribe from "../components/Subscribe/Subscribe";
 import "../scss/global.scss"
 const Home = () => {
-    
     // Отримую вибрану категорію з Category---------------
     const activeCategory = useSelector((state) => state.categorySlice.activeCategory)
     const dispatch = useDispatch()
-    useEffect(() => {
-        window.scrollTo(0,0)
-    }, [])
-    // Запит даних з mockapi---------------
-    useEffect(() => {
-        setIsLoading(true)
+    const recievingData = async () => {
         let searchParams = ""
         if(activeCategory === 0) {
              searchParams = "new" 
@@ -31,19 +25,29 @@ const Home = () => {
        }else {
         searchParams = ""
        }
-        axios.get(`https://64cc9b3a2eafdcdc851a0362.mockapi.io/goods?search=${searchParams}`)
-            .then(res => {
-                dispatch(setGoods(res.data))
-                dispatch(setIsLoading(false))
-                if (searchParams === "new") {
-                    dispatch(setNewGood(true));
-                } else {
-                    dispatch(setNewGood(false));
-                }
-            })
-            .catch(error => console.error("Error fetching data:", error));
-    }, [activeCategory, dispatch]);
-
+       try {
+        const res = await axios.get(`https://64cc9b3a2eafdcdc851a0362.mockapi.io/goods?search=${searchParams}`)
+        dispatch(setGoods(res.data))
+        dispatch(setIsLoading(false))
+        if (searchParams === "new") {
+            dispatch(setNewGood(true));
+        } else {
+            dispatch(setNewGood(false));
+        }
+        }catch (error) {
+            alert("Помилка при отриманні товарів з сервера")
+            console.log("Error", error)
+            dispatch(setIsLoading(true))
+        }
+      
+    }
+    useEffect(() => {
+        window.scrollTo(0,0)
+    }, [])
+    // Запит даних з mockapi---------------
+    useEffect(() => {
+       recievingData()
+    }, [activeCategory, dispatch,recievingData]);
     return (  
         <main>
             <Intro/>

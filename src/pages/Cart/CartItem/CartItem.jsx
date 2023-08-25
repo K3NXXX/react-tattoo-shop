@@ -2,7 +2,7 @@ import style from "./CartItem.module.scss"
 import deleteGood from "../../../assets/img/Cart/cross.svg"
 import { useDispatch } from "react-redux"
 import { addItems, minusItems, removeItems } from "../../../redux/slices/cartSlice"
-const CartItem = ({item}) => {
+const CartItem = ({item, isAccount}) => {
     const dispatch = useDispatch()
     const onClickPlusItem = () => {
         dispatch(addItems({id: item.id}))

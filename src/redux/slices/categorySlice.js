@@ -12,6 +12,7 @@ const initialState = {
     goodsState: {},
     selectSvg: false,
     price: 0,
+    filterButton: ""
 }
 const categorySlice = createSlice({
     name: "category",
@@ -48,6 +49,10 @@ const categorySlice = createSlice({
         setPrice(state, action) {
             state.price = action.payload
         },
+        setFilterButton(state, action) {
+            state.filterButton = action.payload
+        },
+     
         
         
         
@@ -55,5 +60,5 @@ const categorySlice = createSlice({
 })
 export const {setGoods, setActiveCategory, setNewGood, setFavouriteCount, 
               setBinCount, setChooseFavourite, setIsLoading, setClickedIdFavorite,
-              setGoodsState, setPrice, setCatalogGoods} = categorySlice.actions
+              setGoodsState, setPrice, setCatalogGoods, setFilterButton} = categorySlice.actions
 export default categorySlice.reducer

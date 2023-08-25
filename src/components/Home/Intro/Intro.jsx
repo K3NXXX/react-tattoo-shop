@@ -28,7 +28,7 @@ const Intro = () => {
             <div style={{backgroundImage: `url(${bg1})`}} className={style.phone__bg}></div>
             <div className={style.content}>
                 <div className={style.left}>
-                    <h1 className={style.title}>Найкращі товари <br/>в світі тату</h1>
+                    <h1 className={style.title}>Найкращі товари <br/>в світі     тату</h1>
                     <p className={style.text}>Обладнання та матеріали для найяскравіших та якісних робіт</p>
                     <Link to="toCatalog" 
                     smooth={true}

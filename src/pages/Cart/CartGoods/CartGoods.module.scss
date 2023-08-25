@@ -1,0 +1,37 @@
+.left {
+    @media (max-width:1270px) {
+        justify-self: center;
+        }
+    .left__top {
+        display: flex;
+        @media (max-width: 830px) {
+            display: none;
+        }
+        .left__top_name {
+            margin-right: 356px;
+        }
+        .left__top_right {
+            display: flex;
+            gap: 0 85px;
+        }
+    }
+    .goods {
+        display: flex;
+        flex-direction: column;
+        gap: 20px 0;
+        margin-bottom: 60px;
+        min-height: 200px;
+        padding: 0 15px;
+        .empty {
+            max-width: 200px;
+        }
+    }
+    .line {
+        margin-top: 15px;
+        margin-bottom: 30px;
+        @media (max-width:830px) {
+           display: none;
+        }
+        
+    }
+}

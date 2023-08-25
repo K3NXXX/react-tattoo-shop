@@ -1,10 +1,15 @@
 import { useForm } from "react-hook-form"
 import style from "./Header.module.scss"
+import { useDispatch } from "react-redux"
+import { setClickAccount, setIsLogin } from "../../redux/slices/loginSlice"
 const RegistrationForm = () => {
+    const dispatch = useDispatch()
     const {register, handleSubmit, formState: {errors}, reset,} = useForm({mode: "onChange"})
     const onSubmit = () => {
         alert("hello")
         reset()
+        dispatch(setIsLogin(true))
+        dispatch(setClickAccount(false))
     }   
     return (  
         <form onSubmit={handleSubmit(onSubmit)} className={style.form} >

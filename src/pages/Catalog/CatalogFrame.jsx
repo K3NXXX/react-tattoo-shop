@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import style from "./CatalogFrame.module.scss"
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -8,7 +8,9 @@ import CategoryCard from "../../components/Category/CategoryCard";
 import { catalogList } from "../../lists/catalogList";
 import { catalogListTablet } from "../../lists/catalogListTablet";
 import { catalogListPhone } from "../../lists/catalogListPhone";
+import qs from "qs"
 const CatalogFrame = () => {
+    const navigate = useNavigate()
     const {id} = useParams()
     const [catalog, setCatalog] = useState("");
     const [minPrice, setMinPrice] = useState("100")
@@ -22,9 +24,6 @@ const CatalogFrame = () => {
     const handleMaxPriceChange = (event) => {
         setMaxPrice(event.target.value)
     }
-   
-    
-
     useEffect(() => {
         const resizeWindow = () => {
             if (window.innerWidth > 1246) {
@@ -41,7 +40,7 @@ const CatalogFrame = () => {
             window.removeEventListener("resize", resizeWindow)
         }
     }, [id,dispatch])
-    
+
     const catalogGoods = useSelector(state => state.categorySlice.catalogGoods)
     const filteredCatalogGoods = catalogGoods.filter(good => good.category === `${catalog.filterName}`)
     const filteredCatalogGoodsPrice = filteredCatalogGoods.filter(filteredGood =>  filteredGood.price <= parseFloat(maxPrice) && filteredGood.price >= parseFloat(minPrice))
@@ -49,12 +48,19 @@ const CatalogFrame = () => {
     useEffect(() => {
         window.scrollTo(0,0)
     }, [dispatch])
+
     useEffect(() => {
         axios.get(`https://64cc9b3a2eafdcdc851a0362.mockapi.io/goods?search=${filterButton}`)
         .then(res => {
             dispatch(setCatalogGoods(res.data))
         })
     }, [dispatch, filterButton])
+    useEffect(() => {
+        const queryString = qs.stringify({
+            filterButton
+        })
+        navigate(`?${queryString}`)
+    }, [filterButton, navigate])
 
    
     return (  

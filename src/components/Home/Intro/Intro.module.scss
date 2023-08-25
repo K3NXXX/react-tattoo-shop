@@ -38,6 +38,9 @@
     @media(max-width:768px) {
         padding: 48px 15px 109px 15px;
     }
+    @media(max-width:500px) {
+        justify-content: center;
+    }
     
     .title {
         color:  #BB8C5F;
@@ -48,10 +51,6 @@
         line-height: 100%; 
         max-width: 594px;
         margin-bottom: 30px;
-        @media(max-width:884px) {
-                font-size: 60px;
-        }
-        
     }
     .text {
         color: #FAF6F2;

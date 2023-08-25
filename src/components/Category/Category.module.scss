@@ -1,6 +1,6 @@
 .wrapper {
     max-width: 1246px;
-    padding: 120px 15px 60px 15px;
+    padding: 85px 15px 60px 15px;
     margin: 0 auto;
 }
 .category__list {
@@ -9,7 +9,7 @@
     grid-template-columns: repeat(3,200px);
     text-align: center;
     justify-content: center;
-    margin-bottom: 45px;
+    margin-bottom: 70px;
     @media (max-width:842px) {
         gap: 0 10px;
     }
