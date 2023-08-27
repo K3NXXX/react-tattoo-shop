@@ -2,7 +2,9 @@ import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
     isLogin: false,
-    clickAccount: false
+    clickAccount: false,
+    userData: JSON.parse(localStorage.getItem("formData")) || [],
+    isRegistration: true
 }
 const loginSlice = createSlice({
     name: "login",
@@ -13,9 +15,16 @@ const loginSlice = createSlice({
         },
         setClickAccount (state,action) {
             state.clickAccount = action.payload
+        },
+        setUserData (state,action) {
+            state.userData = action.payload
+        },
+        setIsRegistration(state,action) {
+            state.isRegistration = action.payload
         }
+        
     }
    
 })
-export const {setIsLogin,setClickAccount} = loginSlice.actions
+export const {setIsLogin,setClickAccount, setUserData, setIsRegistration} = loginSlice.actions
 export default loginSlice.reducer

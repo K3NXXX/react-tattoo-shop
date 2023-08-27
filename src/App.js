@@ -13,11 +13,11 @@ function App() {
         <Header/>
         <main className="main">
           <Routes>
+            <Route path="*" element={<PageNotFound/>} />
             <Route path="/react-tattoo-shop" element={<Home/>} />
             <Route path="/react-tattoo-shop/cart" element={<Cart/>} />
             <Route path="/react-tattoo-shop/account" element={<Account/>} />
             <Route path="/react-tattoo-shop/catalog/:id" element={<CatalogFrame/>} />
-            <Route path="*" element={<PageNotFound/>} />
           </Routes>
         </main>
           <Footer className="Footer"/>

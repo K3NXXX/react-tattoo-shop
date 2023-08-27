@@ -15,6 +15,7 @@
 
 }
 .left {
+    margin-top: 140px;
     & p:first-child {
         color: #3E424B;
         font-family: Jost;
@@ -38,12 +39,14 @@
     & p:nth-child(2) {
         color: #3E424B;
         font-family: Roboto;
-        font-size: 25px;
+        font-size: 23px;
         font-style: normal;
         font-weight: 500;
         line-height: 115%; 
         max-width: 523px;
         margin-bottom: 30px;
+        text-align: center;
+        margin: 0 auto 30px auto;
         @media (max-width:1835px) {
             text-align: center;
             max-width: none;
@@ -52,93 +55,28 @@
             font-size: 17px;
         }
     }
-    .form {
-        display: flex;
-        flex-direction: column;
-        max-width: 392px;
+    button {
+        display: block;
+        background-image: url("../../assets/img/Subscribe/btnBg.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        width: 275px;
+        height: 70px;
+        color:  #FAF6F2;
+        text-align: center;
+        font-family: Jost;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%; 
+        transition: 0.3s ease;
+        margin: 0 auto;
         @media (max-width:1835px) {
-            align-items: center;
-            max-width: none;
-        }
-        label {
-            color:  #636B78;
-            font-family: Jost;
-            font-size: 17px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 140%; 
-            margin-bottom: 10px;
-        }
-        input {
-            width: 392px;
-            background:  #F5F5F5;
-            padding: 23px;
-            color:  #3E424B;
-            font-family: Jost;
-            font-size: 17px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 140%;
-            margin-bottom: 20px;
-            @media (max-width:1835px) {
-                width: 260px;
-            }
-        }
-        .checkbox {
-            display: flex;
-            gap: 0 20px;
             margin-bottom: 30px;
-            align-items: start;
-            @media (max-width:340px) {
-                gap: 0 10px;
-            }
-            @media (max-width:395px) {
-            }
-                .checkboxClick {
-                    display: block;
-                    width: 20px;
-                    height: 20px;
-                    border: 2px solid #BB8C5F;
-                    cursor: pointer;
-                }
-            p {
-                color:  #636B78;
-                font-family: Jost;
-                font-size: 13px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: 120%; 
-                position: relative;
-                top: 3px;
-                @media (max-width:395px) {
-                    text-align: start;
-                }
-            }
-            .checkboxImg {
-                cursor: pointer;
-            }
         }
-        button {
-            background-image: url("../../assets/img/Subscribe/btnBg.svg");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            width: 275px;
-            height: 70px;
-            color:  #FAF6F2;
-            text-align: center;
-            font-family: Jost;
-            font-size: 20px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 150%; 
-            transition: 0.3s ease;
-            @media (max-width:1835px) {
-                margin-bottom: 30px;
-            }
-            &:hover {
-                opacity: 0.95;
-            }
+        &:hover {
+            opacity: 0.95;
         }
     }
 }
@@ -149,7 +87,7 @@
     }
     .bgImg {
         position: absolute;
-        left: 20px;
+        left: 34px;
         max-width: 952px;
         @media (max-width:1870px) {
             left: 10px;

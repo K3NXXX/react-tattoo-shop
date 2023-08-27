@@ -320,24 +320,29 @@
     @media (max-width:438px) {
         width: 300px;
         padding: 50px 10px 20px 10px;
+        height: 580px;
     }
 
     img {
-        max-width: 50px;
+        max-width: 30px;
         position: absolute;
         cursor: pointer;
         top: 20px;
         right: 20px;
+        @media (max-width:438px) {
+            max-width: 20px;
+        }
     }
     .choose {
         display: flex;
         justify-content: center;
-        gap: 20px;
+        gap: 20px 20px;
         margin-bottom: 30px;
         @media (max-width:438px) {
             flex-direction: column;
             align-items: center;
-            gap: 10px;
+            gap:10px 0px;
+            margin-bottom: 10px;
         }
         span {
             color:  #BB8C5F;
@@ -356,17 +361,31 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 20px 0;
-        input {
-            width: 400px;
-            padding: 10px;
-            border: 1px solid #BB8C5F;
-            font-size: 20px;
-            @media (max-width:600px) {
-                width: 300px;
-            }
+        .popupForm_wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px 0;
             @media (max-width:438px) {
-                width: 250px;
+                gap: 10px 0;
+            }
+            input {
+                width: 400px;
+                padding: 10px;
+                border: 1px solid #BB8C5F;
+                font-size: 20px;
+                @media (max-width:600px) {
+                    width: 300px;
+                }
+                @media (max-width:438px) {
+                    width: 250px;
+                }
+            }
+            
+            .error {
+                color: red;
+                align-self: flex-start;
+                padding-left: 25px;
             }
         }
         button {
@@ -391,7 +410,7 @@
             margin-top: 150px;
             transition: 0.3s ease;
             @media (max-width:438px) {
-                bottom: 50px;
+                bottom: 30px;
             }
            
             &:hover {
@@ -401,11 +420,8 @@
             }
             
         }
-        .error {
-            color: red;
-            align-self: flex-start;
-            padding-left: 25px;
-        }
+       
+        
     }
 }
 .menu, .phone__menu, .arrow {

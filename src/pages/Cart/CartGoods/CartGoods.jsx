@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import style from "./CartGoods.module.scss"
 import CartItem from "../CartItem/CartItem";
-const CartGoods = ({isAccount}) => {
+const CartGoods = () => {
     const {items} = useSelector(state => state.cartSlice)
 
     return (

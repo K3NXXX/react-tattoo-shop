@@ -3,9 +3,13 @@ import style from "./Account.module.scss"
 import UsersDataAccount from "../../components/UsersDataAccount/UsersDataAccount";
 import CartGoods from "../Cart/CartGoods/CartGoods";
 import noAvatar from "../../assets/img/Account/noAvatar.webp"
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setIsLogin, setUserData } from "../../redux/slices/loginSlice";
 const Account = () => {
+    const dispatch = useDispatch()
     const [avatar, setAvatar] = useState(noAvatar);
+    const userData = useSelector(state => state.loginSlice.userData)
     const handleAvatarUpload = (event) => {
         const file = event.target.files[0];
     
@@ -17,6 +21,12 @@ const Account = () => {
             reader.readAsDataURL(file);
         }
     };
+    useEffect(() => {
+        const storedData = JSON.parse(localStorage.getItem("formData"));
+        if (storedData) {
+            dispatch(setUserData(storedData));
+        }
+    }, [dispatch]);
     return (  
         <section className={style.wrapper}>
             <div className={style.left}>
@@ -39,13 +49,16 @@ const Account = () => {
                     </label>
                         <div className={style.online}>
                             <div>
-                                <p className={style.name}>Володимир</p>
-                                <p className={style.name}>Андрушевський</p>
+                                <p className={style.name}>{userData.name}</p>
                             </div>
                             <div className={style.status}>
                                 <div className={style.circle}></div>
                                 <p>В мережі</p>
                             </div>
+                            <Link  className={style.exit}  to="/react-tattoo-shop" 
+                            onClick={() => {
+                                dispatch(setIsLogin(false))
+                            }}>Вийти</Link>
                         </div>
                     </div>
                     <div className={style.column}>
@@ -53,11 +66,11 @@ const Account = () => {
                             <div className={style.contacts}>
                                 <div>
                                     <p className={style.contactsData}>Ел. пошта:</p>
-                                    <p>xxvolodyax7@gmail.com</p>
+                                    <p>{userData.email}</p>
                                 </div>
                                 <div>
                                     <p className={style.contactsData}>Номер тел.:</p>
-                                    <p>+380964825180</p>
+                                    <p>{userData.phone}</p>
                                 </div>
                             </div>
                         </div>  

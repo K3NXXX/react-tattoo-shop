@@ -3,58 +3,81 @@ import { useClickOutside } from "../../hooks/useClickOutside"
 import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 import {Link as LinkScroll} from "react-scroll"
-import popupClose from "../../assets/img/Header/popupClose.png"
+import popupClose from "../../assets/img/Header/popupClose.svg"
 import RegistrationForm from "./RegistrationForm"
 import style from "./Header.module.scss"
 import phone from "../../assets/img/phone-icon.svg"
 import email from "../../assets/img/email-icon.svg"
 import shop_bin from "../../assets/img/shop-bin-icon.svg"
-import favourite from "../../assets/img/favourite-icon.svg"
 import account from "../../assets/img/account-icon.svg"
 import telegram from "../../assets/img/telegram-icon.png"
 import viber1 from "../../assets/img/viber-icon.svg"
 import viber2 from "../../assets/img/viber2-icon.svg"
 import arrow from "../../assets/img/arrow-icon.svg"
-import { setClickAccount } from "../../redux/slices/loginSlice"
+import { setClickAccount, setIsLogin, setIsRegistration } from "../../redux/slices/loginSlice"
 
 const Header = () => {
     const dispatch = useDispatch()
     let [openMenu, setOpenMenu] = useState(false)
     const [expandCatalog, setExpandCatalog] = useState(false)
     const [searchValue, setSearchValue] = useState("")
-    const favouriteCount = useSelector(state => state.categorySlice.favouriteCount)
     const {isLogin, clickAccount} = useSelector(state => state.loginSlice)
+    const userData = useSelector(state => state.loginSlice.userData)
     const catalog = ["Набори для тату", "Тату тримачі", "Тату машинки",  "Педалі та провода", "Тату фарби"]
     const headerCategoryList = ["Промокоди", "Знижки", "Допомога", "Про нас", "Контакти" ]
     const headerPhoneCategoryList = ["Каталог", "Контакти", "Промокоди", "Знижки", "Допомога", "Про нас", "Вибране"]
-    const toggleMenu = () => {
-        setOpenMenu(!openMenu)
-    }
     const popupRef = useRef(null) 
     const listRef = useRef(null)
-    const catalogSvgRef = useRef(null)
+    const isMounted = useRef(false)
+    console.log("user", userData)
+    
     const onClickAccount =  () => {
         dispatch(setClickAccount(true))
     }
-
-    // useClickOutside(listRef, () => { // закриття вікна при кліку в любе місце
-    //     if (expandCatalog) setTimeout(() => setExpandCatalog(false),50)
-    // })
+    const toggleMenu = () => {
+        setOpenMenu(!openMenu)
+    }
     useClickOutside(popupRef, () => { 
         if(clickAccount) setTimeout(() => dispatch(setClickAccount(false)),50)
     })
+    useEffect(() => {
+        document.body.addEventListener("click", event => {
+            const path = event.composedPath(); // Отримання шляху події і закриття списку
+            if (!path.includes(listRef.current)) {
+                setExpandCatalog(false)
+            }
+        })
+    }, [])
+    useEffect(() => {
+        if (userData) {
+            dispatch(setIsLogin(true))
+        }
+    }, [userData, dispatch])
 
+    
+    // Корзина
     const {items, totalPrice} = useSelector(state => state.cartSlice)
     const totalCount = items.reduce((sum, item ) => sum + item.count, 0)
+
+    useEffect(() => {
+        if (isMounted) {
+            const cartItems = JSON.stringify(items)
+            const cartTotalPrice = JSON.stringify(totalPrice)
+            localStorage.setItem("cartItems", cartItems)
+            localStorage.setItem("cartTotalPrice", cartTotalPrice)
+        }
+        isMounted.current = true
+    }, [items,totalPrice])
+    
     return (  
         <div className={style.wrapper}>
-            {clickAccount && (
+            {clickAccount &&  (
                    <div  className={ style.popup_bg }>
                    <div ref={popupRef} className={style.popup}>
                        <img onClick={() => dispatch(setClickAccount(false))} src={popupClose} alt="popupClose" />
                          <div className={style.choose}>
-                             <span>Ввійти</span>
-                             <span>Зареєструватися</span>
+                             <span onClick={() => dispatch(setIsRegistration(false))}>Ввійти</span>
+                             <span onClick={() => dispatch(setIsRegistration(true))}>Зареєструватися</span>
                          </div>
                          <RegistrationForm/>
                    </div>
@@ -114,13 +137,7 @@ const Header = () => {
                             <img src={shop_bin} alt="shop bin" />
                             <span className={style.bin__number}>{totalCount > 0 ? totalCount : ""}</span>
                         </Link>
-                        <a className={style.header__favLink} href="">
-                            <img src={favourite}   alt="favourite" />
-                            {favouriteCount === 0 ? "" : (
-                                <span>{favouriteCount}</span>
-                            )}
-
-                        </a>
+                       
                         {isLogin ? (
                             <Link className={style.accountLink} to= "/react-tattoo-shop/account">
                             <img style={{cursor: "pointer"}} src={account} alt="account" />
@@ -204,9 +221,9 @@ const Header = () => {
 
                 <div className={style.bottom}>
                     <div className={style.bottom__left}>
-                        <div className={style.catalog}>
+                        <div ref={listRef} className={style.catalog}>
                             <p>Каталог</p>
-                            <svg ref={catalogSvgRef} className={style.svg__catalog} onClick={(e) => {
+                            <svg  className={style.svg__catalog} onClick={(e) => {
                                 setExpandCatalog(!expandCatalog)
                                 e.stopPropagation();}} xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
                                 <path d="M2 13H26V15H2V13Z" fill="#BB8C5F"/>
@@ -214,7 +231,7 @@ const Header = () => {
                                 <path d="M2 19H26V21H2V19Z" fill="#BB8C5F"/>
                             </svg>
                             {expandCatalog && (
-                                <ul className={style.desktopCatalogList} ref={listRef} >
+                                <ul className={style.desktopCatalogList}  >
                                     {catalog.map((catalogValue, index) => (
                                         <li onClick={() => setExpandCatalog(false)}  key={catalogValue}><Link to={`/react-tattoo-shop/catalog/${index}`}>{catalogValue}</Link></li>
                                     ))}
