@@ -7,7 +7,7 @@ export const catalogList = [
     {
         id: 1,
         image: img1,
-        description: " Тату набіри",
+        description: " Тату набори",
         url: "тату-набори",
         filterName: "tattooSets",
     },

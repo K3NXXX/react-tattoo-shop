@@ -14,7 +14,7 @@ import telegram from "../../assets/img/telegram-icon.png"
 import viber1 from "../../assets/img/viber-icon.svg"
 import viber2 from "../../assets/img/viber2-icon.svg"
 import arrow from "../../assets/img/arrow-icon.svg"
-import { setClickAccount, setIsLogin, setIsRegistration } from "../../redux/slices/loginSlice"
+import { setClickAccount, setIsRegistration } from "../../redux/slices/loginSlice"
 
 const Header = () => {
     const dispatch = useDispatch()
@@ -48,13 +48,7 @@ const Header = () => {
             }
         })
     }, [])
-    useEffect(() => {
-        if (userData) {
-            dispatch(setIsLogin(true))
-        }
-    }, [userData, dispatch])
 
-    
     // Корзина
     const {items, totalPrice} = useSelector(state => state.cartSlice)
     const totalCount = items.reduce((sum, item ) => sum + item.count, 0)
@@ -76,8 +70,7 @@ const Header = () => {
                    <div ref={popupRef} className={style.popup}>
                        <img onClick={() => dispatch(setClickAccount(false))} src={popupClose} alt="popupClose" />
                          <div className={style.choose}>
-                             <span onClick={() => dispatch(setIsRegistration(false))}>Ввійти</span>
-                             <span onClick={() => dispatch(setIsRegistration(true))}>Зареєструватися</span>
+                             <span onClick={() => dispatch(setIsRegistration(true))}>Реєстрація</span>
                          </div>
                          <RegistrationForm/>
                    </div>
@@ -99,13 +92,7 @@ const Header = () => {
                                 <path d="M2 19H26V21H2V19Z" fill="#BB8C5F"/>
                             </svg>
                             )}
-                            <div className={style.phone__search}>
-                                <input value={searchValue} onChange={(e) => setSearchValue(e.target.value)} className={style.search__input} type="text" placeholder="Пошук"/>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
-                                    <ellipse cx="13.865" cy="13.865" rx="7.86499" ry="7.86499" stroke="#636B78" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                                    <path d="M19.3353 19.7437L22.4188 22.8192" stroke="#636B78" strokeWidth="1.5" strokeLinecap="square" strokeLinejoin="round"/>
-                                </svg>
-                            </div>
+                           
                         </div>
                        
                         <div  className={style.contacts}>
@@ -189,13 +176,7 @@ const Header = () => {
                             </ul>
                         </div>
                         )}
-                    <div>
-                        <input className={style.search__input} type="text" placeholder="Пошук"/>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
-                            <ellipse cx="13.865" cy="13.865" rx="7.86499" ry="7.86499" stroke="#636B78" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                            <path d="M19.3353 19.7437L22.4188 22.8192" stroke="#636B78" strokeWidth="1.5" strokeLinecap="square" strokeLinejoin="round"/>
-                        </svg>
-                    </div>
+                  
                     <div className={style.contacts__phone}>
                         <img src={phone} alt="phone-icon" />
                         <a href="tel:+380975525252"><span className={style.phone__number}>+380 97 552-52-52</span></a>
@@ -239,13 +220,7 @@ const Header = () => {
                             )}
                                 
                         </div>
-                        <div className={style.search}>
-                            <input className={style.search__input} type="text" placeholder="Пошук"/>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
-                                <ellipse cx="13.865" cy="13.865" rx="7.86499" ry="7.86499" stroke="#636B78" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                                <path d="M19.3353 19.7437L22.4188 22.8192" stroke="#636B78" strokeWidth="1.5" strokeLinecap="square" strokeLinejoin="round"/>
-                            </svg>
-                        </div>
+                        
                     </div>
                     <div className={style.bottom__right}>
                         <ul className={style.right__list}>

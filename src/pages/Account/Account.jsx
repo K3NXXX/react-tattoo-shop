@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import style from "./Account.module.scss"
-import UsersDataAccount from "../../components/UsersDataAccount/UsersDataAccount";
 import CartGoods from "../Cart/CartGoods/CartGoods";
 import noAvatar from "../../assets/img/Account/noAvatar.webp"
 import { useEffect, useState } from "react";
@@ -27,6 +26,7 @@ const Account = () => {
             dispatch(setUserData(storedData));
         }
     }, [dispatch]);
+  
     return (  
         <section className={style.wrapper}>
             <div className={style.left}>
@@ -76,12 +76,11 @@ const Account = () => {
                         </div>  
                     </div>
                 </div>
-                <UsersDataAccount/>
                 <svg className={style.line} xmlns="http://www.w3.org/2000/svg" width="800" height="6" viewBox="0 0 800 6" fill="none">
                     <path d="M5 2.5L-2.52368e-07 0.113249L2.52368e-07 5.88675L5 3.5L5 2.5ZM795 3.49993L800 5.88668L800 0.113179L795 2.49993L795 3.49993ZM4.5 3.5L795.5 3.49993L795.5 2.49993L4.5 2.5L4.5 3.5Z" fill="#D0D0D0"/>
                 </svg>
                 <p className={style.cart}>Товари в корзині</p>  
-                <CartGoods  />
+                <CartGoods />
             </div>
         </section>
     );

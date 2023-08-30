@@ -21,10 +21,14 @@ const loginSlice = createSlice({
         },
         setIsRegistration(state,action) {
             state.isRegistration = action.payload
+        },
+        clearUserData(state) {
+            localStorage.removeItem("formData");
+            state.userData = [];
         }
         
     }
    
 })
-export const {setIsLogin,setClickAccount, setUserData, setIsRegistration} = loginSlice.actions
+export const {setIsLogin,setClickAccount, setUserData, setIsRegistration, clearUserData} = loginSlice.actions
 export default loginSlice.reducer

@@ -37,7 +37,7 @@ const UsersData = () => {
                         <input {...register("phone", {
                                required: `Не всі дані вказані`,
                                pattern: {
-                                value: /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/,
+                                value: /\(?(\s*[0-9]{3}\s*)\)?([ .-]?)(\s*[0-9]{3}\s*)\2(\s*[0-9]{4}\s*)/,
                                 message: "Номер телефону вказаний неправильно"
                             }
                             })} type="text" placeholder="+380555353535"/>
@@ -47,7 +47,7 @@ const UsersData = () => {
                         <input {...register("email", {
                                 pattern:{
                                     required: `Не всі дані вказані`,
-                                    value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+                                    value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}\s*$/,
                                     message: "Введіть правильний email",
                             }
                             })} type="text" placeholder="Ivanov2021@gmail.com"/>

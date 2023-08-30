@@ -1,20 +1,20 @@
 import { useForm } from "react-hook-form"
 import style from "./Header.module.scss"
-import { useDispatch, useSelector } from "react-redux"
-import { setClickAccount, setIsLogin } from "../../redux/slices/loginSlice"
+import { useDispatch,  } from "react-redux"
+import { setClickAccount, setIsLogin, setIsRegistration, setUserData } from "../../redux/slices/loginSlice"
 const RegistrationForm = () => {
     const dispatch = useDispatch()
-    const isRegistration = useSelector(state => state.loginSlice.isRegistration)
     const {register, handleSubmit, formState: {errors}, reset,} = useForm({mode: "onChange"})
     const onSubmit = (data) => {
         localStorage.setItem("formData", JSON.stringify(data));
         reset()
         dispatch(setIsLogin(true))
         dispatch(setClickAccount(false))
+        dispatch(setUserData(data));
+        dispatch(setIsRegistration(false));
     }   
     return (  
         <form onSubmit={handleSubmit(onSubmit)} className={style.form} >
-            {isRegistration ? (
                 <div className={style.popupForm_wrapper}>
                     <input {...register("name", {
                     required:"Ім'я обов'язкове поле",
@@ -28,7 +28,7 @@ const RegistrationForm = () => {
                 <input {...register("password", {
                     required: "Пароль обов'язкове поле",
                     pattern: {
-                        value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/,
+                        value: /^(?=.*\d)(?=.*[a-zA-Zа-яА-ЯіїєґёўҐЁЎ])(?=.*[A-ZА-ЯІЇЄҐЁЎ])[0-9a-zA-Zа-яА-ЯіїєґёўҐЁЎ]{8,}$/,
                         message: "Введіть кращий пароль"
                     }
                 
@@ -39,7 +39,7 @@ const RegistrationForm = () => {
                 <input {...register("email", {
                     required: "Email обов'язкове поле",
                     pattern:{
-                        value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+                        value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}\s*$/,
                         message: "Введіть правильний email",
                 }
                 })
@@ -49,35 +49,13 @@ const RegistrationForm = () => {
                 <input {...register("phone", {
                     required: "Телефон обов'язковий",
                     pattern: {
-                        value: /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/,
+                        value: /\(?(\s*[0-9]{3}\s*)\)?([ .-]?)(\s*[0-9]{3}\s*)\2(\s*[0-9]{4}\s*)/,
                         message: "Номер телефону вказаний неправильно"
                     }
                 })
                 } placeholder="Номер телефону" type="text" />
                 {errors.phone && (<div  className={style.error}>{errors.phone.message}</div>)}
                     </div>
-            ) : (
-                <div className={style.popupForm_wrapper}>
-                     <input {...register("email", {
-                    required: "Email обов'язкове поле",
-                    pattern:{
-                        value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
-                        message: "Введіть правильний email",
-                    }
-                     })
-                    } placeholder="Email" type="text" />
-                    {errors.email && (<div  className={style.error}>{errors.email.message}</div>)}
-                     <input {...register("password", {
-                    required: "Пароль обов'язкове поле",
-                    pattern: {
-                    value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/,
-                    message: "Введіть кращий пароль"
-                    }
-                    })
-                    } placeholder="Пароль" type="password" />
-                    {errors.password && (<div  className={style.error}>{errors.password.message}</div>)}
-                </div>
-            )}
             
             <button>Зареєструватися</button>
         </form>
