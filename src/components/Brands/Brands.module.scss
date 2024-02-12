@@ -27,6 +27,7 @@
     justify-content: center;
 }
 .brands__listAll {
+
   display: grid;
   grid-template-columns: repeat(5,1fr);
   gap: 40px 40px;
@@ -35,6 +36,8 @@
 }
 .images {
   max-width: 211px;
+  user-select: none;
+
 }
 .watchAll {
   display: block;
@@ -89,6 +92,10 @@
   }
     
    
+}
+.brands__list img {
+  max-width: 211px;
+  user-select: none;
 }
 
   
