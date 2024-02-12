@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-tattoo-shop/static/css/main.86ad4a8c.css",
-    "main.js": "/react-tattoo-shop/static/js/main.68e54997.js",
+    "main.css": "/react-tattoo-shop/static/css/main.282ad1eb.css",
+    "main.js": "/react-tattoo-shop/static/js/main.4c32f18c.js",
     "static/media/intro-bg1.png": "/react-tattoo-shop/static/media/intro-bg1.997741a18dac7d5563f9.png",
     "static/media/1.png": "/react-tattoo-shop/static/media/1.aa185cc82bf70713ffa4.png",
     "static/media/catalog12.png": "/react-tattoo-shop/static/media/catalog12.ba97cbb423382fdeff9c.png",
@@ -22,6 +22,7 @@
     "static/media/catalogPhone1.png": "/react-tattoo-shop/static/media/catalogPhone1.8b46e89a730d3954a301.png",
     "static/media/catalog3.png": "/react-tattoo-shop/static/media/catalog3.61f4952a42d77afbcf90.png",
     "static/media/catalogTablet4.png": "/react-tattoo-shop/static/media/catalogTablet4.6db23b3bc431922c6aa6.png",
+    "static/media/modal-image.jpg": "/react-tattoo-shop/static/media/modal-image.abbe2124b6f74062c2c1.jpg",
     "static/media/catalogPhone4.png": "/react-tattoo-shop/static/media/catalogPhone4.6b8c88f1529c3ddd50b8.png",
     "static/media/catalogTablet3.png": "/react-tattoo-shop/static/media/catalogTablet3.977e6057ed965277b762.png",
     "static/media/catalogPhone3.png": "/react-tattoo-shop/static/media/catalogPhone3.1e54fc4b84de88f7d26e.png",
@@ -52,11 +53,11 @@
     "static/media/new.svg": "/react-tattoo-shop/static/media/new.665339dc9a968f795dc8.svg",
     "static/media/arrow-icon.svg": "/react-tattoo-shop/static/media/arrow-icon.65fdc6515fe90e8619f350908a22a79b.svg",
     "static/media/hover-line.svg": "/react-tattoo-shop/static/media/hover-line.a82e0207a7adbc030a9b.svg",
-    "main.86ad4a8c.css.map": "/react-tattoo-shop/static/css/main.86ad4a8c.css.map",
-    "main.68e54997.js.map": "/react-tattoo-shop/static/js/main.68e54997.js.map"
+    "main.282ad1eb.css.map": "/react-tattoo-shop/static/css/main.282ad1eb.css.map",
+    "main.4c32f18c.js.map": "/react-tattoo-shop/static/js/main.4c32f18c.js.map"
   },
   "entrypoints": [
-    "static/css/main.86ad4a8c.css",
-    "static/js/main.68e54997.js"
+    "static/css/main.282ad1eb.css",
+    "static/js/main.4c32f18c.js"
   ]
 }
