@@ -1,4 +1,6 @@
 import { Route, Routes } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux"
+import {useEffect} from "react"
 import Header from "./components/Header/Header";
 import Home from "./pages/Home";
 import Footer from "./components/Footer/Footer";
@@ -7,7 +9,14 @@ import CatalogFrame from "./pages/Catalog/CatalogFrame";
 import Cart from "./pages/Cart/Cart";
 import Account from "./pages/Account/Account";
 import "./scss/global.scss"
+import { fetchAuthMe, selectIsAuth } from "./redux/slices/authSlice";
+import { AppDispatch } from "./redux/store";
 const App: React.FC = () => {
+  const dispatch = useDispatch<AppDispatch>()
+  const isAuth = useSelector(selectIsAuth)
+  useEffect(() => {
+    dispatch(fetchAuthMe())
+  }, [])
   return (
     <div className="App">
         <Header/>

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { CartItemType, setSuccessData } from "../../redux/slices/cartSlice";
 import { useClickOutside } from "../../hooks/useClickOutside";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { RootState } from "../../redux/store";
 import style from "./Cart.module.scss";
 
@@ -23,6 +23,10 @@ const Cart: React.FC = () => {
   useClickOutside(popupRef, () => {
     if (successData) setTimeout(() => dispatch(setSuccessData(false)), 50);
   });
+
+  useEffect(() => {
+    window.scrollTo(0,0)
+  }, [])
 
   return (
     <section className={style.wrapper}>

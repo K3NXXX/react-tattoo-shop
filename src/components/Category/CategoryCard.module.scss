@@ -89,6 +89,8 @@
         transition: opacity 0.5s;
         position: absolute;
         transition-duration: 0.3s;
+        user-select: none;
+
         &:hover {
             opacity: 0.8;
         }
@@ -148,3 +150,4 @@
        
     }
 }
+

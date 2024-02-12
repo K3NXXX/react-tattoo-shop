@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 import { useState,useRef, useEffect} from "react"
 import { useClickOutside } from "../../hooks/useClickOutside"
 import { useDispatch, useSelector } from "react-redux"
-import { setClickAccount } from "../../redux/slices/loginSlice"
+import { setClickAccount } from "../../redux/slices/authSlice"
 import { RootState } from "../../redux/store"
 import { CartItemType } from "../../redux/slices/cartSlice"
 import popupClose from "../../assets/img/Header/popupClose.svg"
@@ -17,6 +17,8 @@ import telegram from "../../assets/img/telegram-icon.png"
 import viber1 from "../../assets/img/viber-icon.svg"
 import viber2 from "../../assets/img/viber2-icon.svg"
 import arrow from "../../assets/img/arrow-icon.svg"
+import LoginForm from "./LoginForm"
+import { selectIsAuth } from "../../redux/slices/authSlice"
 
 const Header: React.FC = () => {
     const catalog = ["Набори для тату", "Тату тримачі", "Тату машинки",  "Педалі та провода", "Тату фарби"]
@@ -24,15 +26,15 @@ const Header: React.FC = () => {
     const headerPhoneCategoryList = ["Каталог", "Контакти", "Промокоди", "Знижки", "Допомога", "Про нас", "Вибране"]
     let [openMenu, setOpenMenu] = useState<boolean>(false)
     const [expandCatalog, setExpandCatalog] = useState<boolean>(false)
-    const {isLogin, clickAccount} = useSelector((state:RootState) => state.loginSlice)
+    const [authChoose, setAuthChoose] = useState("register")
+    const {clickAccount} = useSelector((state:RootState) => state.authSlice)
+    const isAuth = useSelector(selectIsAuth)
     const popupRef = useRef<HTMLDivElement>(null) 
     const listRef = useRef<HTMLDivElement | null>(null)
     const isMounted = useRef(false)
     const dispatch = useDispatch()
     
-    const onClickAccount =  () : void => {
-        dispatch(setClickAccount(true))
-    }
+    
     const toggleMenu = () : void => {
         setOpenMenu(!openMenu)
     }
@@ -70,9 +72,14 @@ const Header: React.FC = () => {
                    <div ref={popupRef} className={style.popup}>
                        <img onClick={() => dispatch(setClickAccount(false))} src={popupClose} alt="popupClose" />
                          <div className={style.choose}>
-                             <span>Реєстрація</span>
+                             <span onClick={() => setAuthChoose("register")}>Реєстрація</span>
+                             <span onClick={() => setAuthChoose("login")}>Вхід</span>
                          </div>
-                         <RegistrationForm/>
+                         {authChoose === "register" ? (
+                             <RegistrationForm/>
+                         ): (
+                            <LoginForm/>
+                         )}
                    </div>
                </div>
             )}
@@ -123,14 +130,12 @@ const Header: React.FC = () => {
                             <img src={shop_bin} alt="shop bin" />
                             <span className={style.bin__number}>{totalCount > 0 ? totalCount : ""}</span>
                         </Link>
-                       
-                        {isLogin ? (
-                            <Link className={style.accountLink} to= "/react-tattoo-shop/account">
-                            <img style={{cursor: "pointer"}} src={account} alt="account" />
+                        {isAuth ? (
+                            <Link to="/react-tattoo-shop/account">
+                                <img  style={{cursor: "pointer"}} src={account} alt="account" />
                             </Link>
-                        ) : (
-                            
-                            <img onClick={onClickAccount}  style={{cursor: "pointer"}} src={account} alt="account" />
+                        ): (
+                            <img onClick={() => dispatch(setClickAccount(true))}  style={{cursor: "pointer"}} src={account} alt="account" />
                         )}
                         
                     </div>

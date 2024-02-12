@@ -16,41 +16,39 @@ const Home: React.FC = () => {
     // Отримую вибрану категорію з Category---------------
     const activeCategory = useSelector((state: RootState) => state.categorySlice.activeCategory)
     const dispatch = useDispatch()
-    const recievingData = async () => {
-        let searchParams = ""
-        if(activeCategory === 0) {
-             searchParams = "new" 
-        }else if (activeCategory === 1) {
-             searchParams = "hits"
-        }else if (activeCategory === 2) {
-            searchParams = "popular"
-       }else {
-        searchParams = ""
-       }
-       try {
-        const res = await axios.get(`https://64cc9b3a2eafdcdc851a0362.mockapi.io/goods?search=${searchParams}`)
-        dispatch(setGoods(res.data))
-        dispatch(setIsLoading(false))
-        if (searchParams === "new") {
-            dispatch(setNewGood(true));
-        } else {
-            dispatch(setNewGood(false));
+    useEffect(() => {
+        const recievingData = async () => {
+            let searchParams = ""
+            if(activeCategory === 0) {
+                 searchParams = "new" 
+            }else if (activeCategory === 1) {
+                 searchParams = "hits"
+            }else if (activeCategory === 2) {
+                searchParams = "popular"
+           }else {
+            searchParams = ""
+           }
+           try {
+            const res = await axios.get(`https://64cc9b3a2eafdcdc851a0362.mockapi.io/goods?search=${searchParams}`)
+            dispatch(setGoods(res.data))
+            dispatch(setIsLoading(false))
+            if (searchParams === "new") {
+                dispatch(setNewGood(true));
+            } else {
+                dispatch(setNewGood(false));
+            }
+            }catch (error) {
+                alert("Помилка при отриманні товарів з сервера")
+                console.log("Error", error)
+                dispatch(setIsLoading(true))
+            }
         }
-        }catch (error) {
-            alert("Помилка при отриманні товарів з сервера")
-            console.log("Error", error)
-            dispatch(setIsLoading(true))
-        }
-    }
+        recievingData()
+    }, [activeCategory, dispatch])
+   
     useEffect(() => {
         window.scrollTo(0,0)
     }, [])
-
-    // Запит даних з mockapi---------------
-    useEffect(() => {
-       recievingData()
-    }, [activeCategory, dispatch,recievingData]);
-
     return (  
         <main>
             <Intro/>

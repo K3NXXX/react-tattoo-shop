@@ -1,16 +1,18 @@
 import CartGoods from "../Cart/CartGoods/CartGoods";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setIsLogin, setUserData } from "../../redux/slices/loginSlice";
+import { setUserData } from "../../redux/slices/loginSlice";
 import { RootState } from "../../redux/store";
 import style from "./Account.module.scss"
 import noAvatar from "../../assets/img/Account/noAvatar.webp"
+import { logout } from "../../redux/slices/authSlice";
 
 const Account: React.FC = () => {
     const dispatch = useDispatch()
+    const navigate = useNavigate()
     const [avatar, setAvatar] = useState<string>(noAvatar);
-    const userData = useSelector((state: RootState) => state.loginSlice.userData)
+    const {data} = useSelector((state:RootState) => state.authSlice)
     const handleAvatarUpload = (event: React.ChangeEvent<HTMLInputElement>) : void => {
         if (event.target && event.target.files && event.target.files.length > 0) {
             const file = event.target.files[0];
@@ -54,7 +56,7 @@ const Account: React.FC = () => {
                     </label>
                         <div className={style.online}>
                             <div>
-                                <p className={style.name}>{userData.name}</p>
+                                <p className={style.name}>{data && data.fullName}</p>
                             </div>
                             <div className={style.status}>
                                 <div className={style.circle}></div>
@@ -62,7 +64,9 @@ const Account: React.FC = () => {
                             </div>
                             <Link  className={style.exit}  to="/react-tattoo-shop" 
                             onClick={() => {
-                                dispatch(setIsLogin(false))
+                                dispatch(logout())
+                                navigate("/react-tattoo-shop")
+                                window.localStorage.removeItem("token")
                             }}>Вийти</Link>
                         </div>
                     </div>
@@ -71,11 +75,7 @@ const Account: React.FC = () => {
                             <div className={style.contacts}>
                                 <div>
                                     <p className={style.contactsData}>Ел. пошта:</p>
-                                    <p>{userData.email}</p>
-                                </div>
-                                <div>
-                                    <p className={style.contactsData}>Номер тел.:</p>
-                                    <p>{userData.phone}</p>
+                                    <p>{data && data.email}</p>
                                 </div>
                             </div>
                         </div>  

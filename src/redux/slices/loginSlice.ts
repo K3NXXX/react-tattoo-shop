@@ -1,16 +1,20 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit"
-import { Data } from "../../components/Header/RegistrationForm"
-import { getUserDataFromLS } from "../../utils/getUserDataFromLS";
+import { userData } from "./authSlice";
+
+
 
 type LoginInitialState = {
     isLogin: boolean;
+    loading: string;
     clickAccount: boolean;
-    userData: Data;
+    userData: userData | null;
 }
 const initialState: LoginInitialState = {
     isLogin: false,
     clickAccount: false,
-    userData: getUserDataFromLS(),
+    userData: null,
+    loading: ""
+    // userData: getUserDataFromLS(),
 }
 const loginSlice = createSlice({
     name: "login",
@@ -22,10 +26,12 @@ const loginSlice = createSlice({
         setClickAccount (state,action:PayloadAction<boolean>) {
             state.clickAccount = action.payload
         },
-        setUserData (state,action:PayloadAction<Data>) {
+        setUserData (state,action:PayloadAction<userData>) {
             state.userData = action.payload
         },
-    }
+    },
+ 
+   
 })
 export const {setIsLogin,setClickAccount, setUserData} = loginSlice.actions
 export default loginSlice.reducer

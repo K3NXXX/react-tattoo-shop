@@ -18,6 +18,7 @@ type CategoryInitialState = {
     selectSvg: boolean,
     price: number,
     filterButton: string,
+    modal: boolean
 }
 const initialState: CategoryInitialState = {
     goods: [],
@@ -29,6 +30,7 @@ const initialState: CategoryInitialState = {
     selectSvg: false,
     price: 0,
     filterButton: "",
+    modal: false
 }
 const categorySlice = createSlice({
     name: "category",
@@ -60,8 +62,12 @@ const categorySlice = createSlice({
         },
         setSelectSvg(state,action:PayloadAction<boolean>) {
             state.selectSvg = action.payload
+        },
+        setModal(state,action:PayloadAction<boolean>) {
+            state.modal = action.payload
         }
     }
 })
-export const {setGoods, setActiveCategory, setNewGood, setBinCount, setIsLoading,  setPrice, setCatalogGoods, setFilterButton, setSelectSvg} = categorySlice.actions
+export const {setGoods, setActiveCategory, setNewGood, setBinCount, setIsLoading,  setPrice, 
+    setCatalogGoods, setFilterButton, setSelectSvg, setModal} = categorySlice.actions
 export default categorySlice.reducer

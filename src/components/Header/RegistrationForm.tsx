@@ -1,29 +1,34 @@
 import { useForm } from "react-hook-form"
 import { useDispatch } from "react-redux"
-import { setClickAccount, setIsLogin, setUserData } from "../../redux/slices/loginSlice"
+import { userData } from "../../redux/slices/authSlice"
 import style from "./Header.module.scss"
+import { fetchRegister } from "../../redux/slices/authSlice"
+import { AppDispatch } from "../../redux/store"
+import { setClickAccount } from "../../redux/slices/authSlice"
 
-export type Data = {
-    email: string;    
-    name: string;
-    password: string;
-    phone: string;
-}
+
 const RegistrationForm: React.FC = () => {
-    const dispatch = useDispatch()
-    const {register, handleSubmit, formState: {errors}, reset,} = useForm<Data>({mode: "onChange"})
-    const onSubmit = (data : Data)  => {
-        localStorage.setItem("formData", JSON.stringify(data));
-        dispatch(setIsLogin(true))
+    const dispatch = useDispatch<AppDispatch>()
+    const {register, handleSubmit, formState: {errors}} = useForm<userData>({mode: "onChange"})
+    const onSubmit = async(userData : userData)  => {
+        const data = await dispatch(fetchRegister(userData))
+
+        if(!data.payload) {
+            return alert("Не вдалось зареєструватися")
+        }
+
+        if ("token" in data.payload) {
+            window.localStorage.setItem("token", data.payload.token)
+        }
+
         dispatch(setClickAccount(false))
-        dispatch(setUserData(data));
-        reset()
+       
     }   
 
     return (  
         <form onSubmit ={handleSubmit(onSubmit)} className={style.form} >
                 <div className={style.popupForm_wrapper}>
-                    <input {...register("name", {
+                    <input {...register("fullName", {
                     required:"Ім'я обов'язкове поле",
                     maxLength: {
                         value: 20,
@@ -31,7 +36,7 @@ const RegistrationForm: React.FC = () => {
                     }
                     })
                 } placeholder="Ім'я" type="text" />
-                {errors.name && (<div className={style.error}>{errors.name.message}</div>)}
+                {errors.fullName && (<div className={style.error}>{errors.fullName.message}</div>)}
                 <input {...register("password", {
                     required: "Пароль обов'язкове поле",
                     pattern: {
@@ -52,17 +57,7 @@ const RegistrationForm: React.FC = () => {
                 })
                 } placeholder="Email" type="text" />
                 {errors.email && (<div  className={style.error}>{errors.email.message}</div>)}
-
-                <input {...register("phone", {
-                    required: "Телефон обов'язковий",
-                    pattern: {
-                        value: /\(?(\s*[0-9]{3}\s*)\)?([ .-]?)(\s*[0-9]{3}\s*)\2(\s*[0-9]{4}\s*)/,
-                        message: "Номер телефону вказаний неправильно"
-                    }
-                })
-                } placeholder="Номер телефону" type="text" />
-                {errors.phone && (<div  className={style.error}>{errors.phone.message}</div>)}
-                    </div>
+                </div>
             
             <button>Зареєструватися</button>
         </form>
