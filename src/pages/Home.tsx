@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setActiveCategory, setGoods, setIsLoading, setNewGood } from "../redux/slices/categorySlice";
 import { RootState } from "../redux/store";
 import axios from "axios";
-import "../scss/global.scss"
+import "../scss/global.module.scss"
 
 const Home: React.FC = () => {
     // Отримую вибрану категорію з Category---------------
