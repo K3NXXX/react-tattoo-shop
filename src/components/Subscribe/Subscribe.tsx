@@ -1,11 +1,8 @@
 import { animateScroll as scroll } from 'react-scroll';
-import { setClickAccount } from "../../redux/slices/loginSlice";
-import { useDispatch } from "react-redux";
 import style from "./Subscribe.module.scss"
 import bgImg from "../../assets/img/Subscribe/bgImg.png"
 import returnToTop from "../../assets/img/Brands/prevBtn.png"
 const Subscribe: React.FC = () => {
-    const dispatch = useDispatch()
     const scrollToTop = () : void => {
         scroll.scrollToTop({
             smooth: true, // Додає плавність прокрутки
@@ -18,7 +15,7 @@ const Subscribe: React.FC = () => {
             <div className={style.left}>
                 <p>Дізнавайтеся першими</p>
                 <p>Зареєструйтеся, щоб знати про новини та акції</p>
-                <button onClick={() => dispatch(setClickAccount(true))} type="submit">Зареєструватися</button>
+                <button type="submit">Зареєструватися</button>
             </div>
             <div className={style.right}>
                 <img className={style.bgImg} src={bgImg} alt="bgImg" />
